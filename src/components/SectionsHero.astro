@@ -39,7 +39,7 @@ const sections = [
   {
     sections.map(section=>(
     <div class="box flex justify-between gap-4 max-w[300px]">
-    <aside class="resize">
+    <aside>
       <h2>{section.heading}</h2>
       <ul class= "text-gray-900">
         <li class="px-6 py-2 w-full">{section.li_1}</li>
@@ -56,7 +56,8 @@ const sections = [
       </ul>
 
     </aside>
-    <img src={section.imgUrl} alt={section.img_alt} />
+    <div class="imageCoverHero flex items-center">
+      <img src={section.imgUrl} alt={section.img_alt} class="max-w-[500px]" /></div>
   </div>
     ))
   }
@@ -71,7 +72,8 @@ const sections = [
            <li class="indent-6">I see no reason to enter into a bargaining session with a band of scoundrels, (The CROWD cheers). They have long provoked and insulted our great Nation from without and now seem determined to undermine it from within!</li>
            <li class="indent-6">(The CROWD shouts, 'Death to all traitors!'). The only way to deal with this thom in our side-this inferior, insignificant little people-is to wipe it off the face of the earth. (The CROWD chants, ' We want war!').
             No matter who its protectors are, no matter how they respond to our challenge, let me state unequivocally that we are afraid of no one! (The CROWD shouts, 'We want war! Long live the Marshall! We want War!').
-            I knew you would stand by me. And I know you will stand by me when I proclaim to the entire world: We did not want this war, but we shall win it, Victory is ours! ...</li>
+            I knew you would stand by me. And I know you will stand by me when I proclaim to the entire world: </li>
+            <li>We did not want this war, but we shall win it, <strong>Victory is ours! ...</strong></li>
       </ul>
 
   </div>
@@ -80,7 +82,7 @@ const sections = [
 <style> 
 
 
-.resize{overflow:auto;resizeY:both;}
+/*.resize{overflow:auto;resizeY:both;}*/
   .strong{
     font-family: Creepster;
     color: red;

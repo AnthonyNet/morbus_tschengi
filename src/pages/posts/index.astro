@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import type { BlogPostFrontmatter } from '../../types';
 import { formatDate } from '../../utils';
 
+
 let posts = await  Astro.glob<BlogPostFrontmatter>('./*.md');
 type Post = MarkdownInstance<BlogPostFrontmatter>;
 
@@ -16,6 +17,7 @@ posts = posts.sort(( num1: Post, num2: Post): number =>{
         return 1;
     }
 })
+
 ---
 
 <Base title="Blog posts">

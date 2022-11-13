@@ -1,5 +1,4 @@
 ---
-import { text } from "stream/consumers";
 import type { Hero } from "../types";
 
 const textHero: Hero[] = [
@@ -27,8 +26,8 @@ const textHero: Hero[] = [
         </h2>
         <h4 class="indent-4">{item.heading4}</h4>
         <div class="h-[100px] animSpan">
-          <h2>
-            <a href="#sections">
+          <h2 class="indent-4">
+            <a href="#sections" class="hover:text-red-800">
               {" "}
               <span>&#9759;</span>
               {item.heading2_c}

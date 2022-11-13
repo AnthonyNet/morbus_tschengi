@@ -1,9 +1,7 @@
 ---
-import fs from 'node:fs/promises';
 import type { MarkdownLayoutProps } from 'astro';
 import { Picture } from '@astrojs/image/components';
 import type { BlogPostFrontmatter } from '../types';
-import { formatDate } from '../utils';
 import Base from './Base.astro'
 
 type Props = MarkdownLayoutProps<BlogPostFrontmatter>
@@ -16,11 +14,7 @@ let imageExists = true;
 ---
 
 <Base title="blog post">
-    <div class="mb-8 text-slate-900">
-        <h2 class="text-3xl mb-2 text-center">{title}</h2>
-        <p class="text-center">{formatDate(date)}</p>
-    </div>
-
+   
     <div class="prose mb-8 text-slate-900 m-auto">
         {
             imageExists && <Picture class="mb-8" src={`/images/${slug}.jpg`} widths={[400,600,1024]} sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, 1024px" aspectRatio="5:3"  alt="image"/>
