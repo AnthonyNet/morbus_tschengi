@@ -1,196 +1,154 @@
 ---
+import { text } from "stream/consumers";
+import type { Hero } from "../types";
 
+const textHero: Hero[] = [
+  {
+    heading2: "Information Portal about",
+    heading1: "Morbus Tschengi",
+    heading2_b: "also known as",
+    blick: "White Disease",
+    heading4: "@discovered by Karel Capek 1937",
+    heading2_c: "Symptoms",
+  },
+];
 ---
 
-<section class="hero flex justify-around items-center mainPage">
-    <div class="text-3xl normalFont">
-      <h2 class="pb-2">Information Portal about</h2>
-      <h1 class="pb-2 blickAnimation text-8xl">Morbus Tschengi </h1>
-      <h2 class="indent-4 p-2">also known as <span class="blickAnimation">White Disease</span></h2>
-      <h4 class="indent-4">@discovered by Karel Capek 1937</h4>
-      <div class="h-[100px] animSpan">
-        <h2 class=""><a href="#sections"> <span>&#9759;</span> Symptoms<span>&#9759;</span></a></h2>
+<section
+  class="heroSection heroDefault flex justify-around items-center mainPage"
+>
+  {
+    textHero.map((item) => (
+      <div class="text-3xl heroText">
+        <h2 class="pb-2">{item.heading2}</h2>
+        <h1 class="pb-2 blickAnimation text-8xl">{item.heading1} </h1>
+        <h2 class="indent-4 p-2">
+          {item.heading2_b} <span class="blickAnimation">{item.blick}</span>
+        </h2>
+        <h4 class="indent-4">{item.heading4}</h4>
+        <div class="h-[100px] animSpan">
+          <h2>
+            <a href="#sections">
+              {" "}
+              <span>&#9759;</span>
+              {item.heading2_c}
+              <span>&#9759;</span>
+            </a>
+          </h2>
+        </div>
       </div>
-    </div>
-    <div class="text-3xl hidden bloodFont text-red-500">
-      <h2 class="pb-2">Information Portal about</h2>
-      <h1 class="pb-2 blickAnimation">Morbus Tschengi </h1>
-      <h2 class="indent-4 p-2">also known as White Disease</h2>
-      <h4 class="indent-4">@discovered by Karel Capek 1937</h4>
-      <div class="h-[100px] animSpan">
-        <h2 class="p-8"><a href="#sections"> <span>&#9759;</span> Symptoms<span>&#9759;</span></a></h2>
-      </div>
-    </div>
-    <div class="anime">
-      <img 
-        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fzombie-clipart-zombie-word-18.png&f=1&nofb=1&ipt=b11b998aa0eae5223d940e45af61a176394248ef1371ed910ea0ec76bc5b374a&ipo=images"
-        alt=""
-      />
-    </div>
-  </section>
+    ))
+  }
 
-  <script>
-    const anime = document.querySelector(".anime") as HTMLElement;
-    const hero = document.querySelector(".hero") as HTMLElement;
-  
-    const bloodFont = document.querySelector(".bloodFont") as HTMLElement;
-    const normalFont = document.querySelector(".normalFont") as HTMLElement;
-  
-    const mouseIn = () => {
-      hero.classList.remove("heroNonActive");
-      hero.classList.add("heroActive");
-     setTimeout(()=>{
-      bloodFont.classList.remove("hidden");
-      normalFont.classList.add("hidden");
-     }, 2000)
-    };
-    const mouseOut = () => {
-      hero.classList.remove("heroActive");
-      hero.classList.add("heroNonActive");
-      bloodFont.classList.add("hidden");
-      normalFont.classList.remove("hidden");
-    };
-    anime?.addEventListener("mouseover", mouseIn);
-    anime?.addEventListener("mouseout", mouseOut);
-  </script>
-  
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Noto+Sans:ital,wght@0,500;1,600&display=swap');
+  <div class="heroImage">
+    <img
+      src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fzombie-clipart-zombie-word-18.png&f=1&nofb=1&ipt=b11b998aa0eae5223d940e45af61a176394248ef1371ed910ea0ec76bc5b374a&ipo=images"
+      alt=""
+    />
+  </div>
+</section>
+
+<script>
+  const heroImage = document.querySelector(".heroImage") as HTMLElement;
+  const heroSection = document.querySelector(".heroSection") as HTMLElement;
+
+
+  const mouseIn = () => {
+    heroSection.classList.remove("heroDefault");
+    heroSection.classList.add("heroScary");
+  };
+
+  const mouseOut = () => {
+    heroSection.classList.remove("heroScary");
+    heroSection.classList.add("heroDefault");
    
-     .border {
-       border: 1px solid red;
-     }
-     /*
-     .anime:hover img {
-       transform: rotateY(360deg);
-       -webkit-filter: invert(100%);
-       filter: invert(100%);
-       transition: 4s ease-in-out;
-       border-radius: 100%;
-     }*/
-   
-     .heroActive {
-       background: black;
-       transition: 2s ease-in;
-   }
-   
-   
-     .heroActive h2,
-     .heroActive h1,
-     .heroActive h4 {
-       transition: 2s ease-in;
-     }
-   
-     .heroActive .anime img {
-       transform: rotateY(180deg);
-       -webkit-filter: invert(100%);
-       filter: invert(100%);
-       transition: 2s ease-in-out;
-     }
-     .normalFont {
-       transition: 6s ease-in-out;
-     }
-   
-   .bloodFont{
-       font-family: 'Creepster', cursive;
-   }
-   
-     .heroNonActive .anime img {
-       transform: rotateY(0deg);
-       transition: 3s;
-     }
-   
-     main {
-       margin: auto;
-     }
-   
-     .hero {
-       width: 100vw;
-       max-width: 1920px;
-       height: calc(100vh - 60px);
-       transition: 2s ease-in-out;
-         font-family: 'Creepster', cursive;
-     }
-   
-     .mainPage div img {
-       width: 500px;
-       height: 500px;
-     }
-   
-     .box {
-       background-color: #153acc;
-       margin: 5em 0;
-       border-radius: 10px;
-       transform: translateX(400%);
-       transition: transform 0.4s ease-in-out;
-     }
-   
-     .box:nth-of-type(even) {
-       transform: translateX(-400%);
-     }
-   
-     .box.show {
-       transform: translateX(0);
-     }
-     h1 {
-       font-size: 3rem;
-       font-weight: 800;
-       margin: 0;
-     }
-     .text-gradient {
-       background-image: var(--accent-gradient);
-       -webkit-background-clip: text;
-       -webkit-text-fill-color: transparent;
-       background-size: 400%;
-       background-position: 0%;
-     }
-     .instructions {
-       line-height: 1.6;
-       margin: 1rem 0;
-       border: 1px solid rgba(var(--accent), 25%);
-       background-color: white;
-       padding: 1rem;
-       border-radius: 0.4rem;
-     }
-     .instructions code {
-       font-size: 0.875em;
-       font-weight: bold;
-       background: rgba(var(--accent), 12%);
-       color: rgb(var(--accent));
-       border-radius: 4px;
-       padding: 0.3em 0.45em;
-     }
-     .instructions strong {
-       color: rgb(var(--accent));
-     }
-     .link-card-grid {
-       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-       gap: 1rem;
-       padding: 0;
-     }
-     @keyframes upDown {
-                   0% {
-                       padding-top: 0px;
-                   }
-   
-                   50% {
-                       padding-top: 20px;
-                   }
-               }
-   
-         @keyframes blick {
-           0%{color: black;
-           }
-           95%{opacity: 100; color: black;}
-           96%{opacity: 0; color: red;}
-           97%{opacity: 100;}
-           100%{opacity: 0;color: red;}
-         }
-     .animSpan{
-       animation: upDown 2s linear infinite;
-     }
-   .blickAnimation{
-     animation: blick 10s linear infinite;
-   }
-   </style>
+  };
+  heroImage?.addEventListener("mouseover", mouseIn);
+  heroImage?.addEventListener("mouseout", mouseOut);
+</script>
+
+<style>
+  .border {
+    border: 1px solid red;
+  }
+
+  .heroSection {
+    width: 100vw;
+    max-width: 1920px;
+    height: calc(100vh - 60px);
+    transition: 2s ease-in-out;
+    font-family: "Creepster", cursive;
+  }
+
+  .heroDefault .heroImage img {
+    transform: rotateY(0deg);
+    transition: 3s;
+  }
+  .heroScary {
+    background: black;
+    transition: 2s ease-in;
+    
+  }
+  .heroScary .heroImage img {
+    transform: rotateY(180deg);
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    transition: 2s ease-in-out;
+  }
+
+  .heroText {
+    transition: 6s ease-in-out;
+  }
+  .heroScary .heroText .blickAnimation
+  {
+    color:red;
+    animation: show 8s ease;
+    opacity: 0;
+  }
+  @keyframes show{
+    from{opacity:0;}
+    to{opacity:100}
+  }
+  .mainPage div img {
+    width: 500px;
+    height: 500px;
+  }
+
+  @keyframes upDown {
+    0% {
+      padding-top: 0px;
+    }
+
+    50% {
+      padding-top: 20px;
+    }
+  }
+
+  @keyframes blick {
+    0% {
+      color: black;
+    }
+    95% {
+      opacity: 100;
+      color: black;
+    }
+    96% {
+      opacity: 0;
+      color: red;
+    }
+    97% {
+      opacity: 100;
+    }
+    100% {
+      opacity: 0;
+      color: red;
+    }
+  }
+  .heroDefault .animSpan {
+    animation: upDown 2s linear infinite;
+  }
+  .heroDefault .blickAnimation {
+    animation: blick 10s linear infinite;
+  }
+
+</style>
