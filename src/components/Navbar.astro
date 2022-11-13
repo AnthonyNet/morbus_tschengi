@@ -1,0 +1,50 @@
+---
+const items = [
+    {
+        title: 'Home',
+        path: '/'
+    },
+    {
+        title: 'Blog',
+        path: '/posts'
+    },
+    {
+        title: 'About',
+        path: '/about'
+    }
+]
+---
+
+<nav class="flex bg-black text-white top-0 sticky z-10">
+    <div class="font-bold text-4xl self-center ml-4">
+        AZ
+    </div>
+
+    <div class= "flex w-[100%] justify-end">
+        <ul class="flex self-center text-3xl">
+            {
+                items.map(item=>(
+                <li><a class="block hover:bg-gray-700 self-center mr-10" href={item.path}>{item.title}</a></li>
+                ))
+            }
+        </ul>
+    </div>
+</nav>
+
+<style>
+ .border{
+    border: 1px solid red;
+ }   
+    nav{
+        font-family: 'Creepster', cursive;
+        height: var(--navbar-height);
+    }
+nav ul li{
+  
+    list-style: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+}
+</style>

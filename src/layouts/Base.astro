@@ -1,0 +1,49 @@
+---
+interface Props {
+    title:string;
+}
+
+
+import Navbar from '../components/Navbar.astro';
+---
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My Astro try</title>
+        <meta name="viewport" content="width=device-width initial-scale=1">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    </head>
+
+    <body>
+        <Navbar />
+		<slot />
+    </body>
+	
+</html>
+
+<style is:global>
+	:root {
+		--navbar-height: 60px;
+		scroll-padding-top: calc(var(--navbar-height) + 10px);
+		scroll-behavior: smooth;
+
+		--color-red: red;
+		--color-black: black;
+		--color-white: #ffffff;
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background-color: var(--color-white);
+		overflow-x: hidden;
+	}
+	body, main{
+		margin: 0 auto;
+		max-width: 1920px;
+	}
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+</style>
