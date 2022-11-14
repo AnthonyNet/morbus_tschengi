@@ -24,11 +24,11 @@ const sections = [
     heading: "The only cure is prevention" ,
     li_1: "The virus is demonstrably unable to endure increased cognitive (brain) activity, which it is constantly trying to suppress.",
     li_2: "According to the research of Dr. Galen from the Lilienthal´s University Clinic, with the right use of education, self-criticism, compassion and information, the prototype vaccine is effective.",
-    li_3: "Vulnerable groups and people in difficult life situations are often the target.",
+    li_3: "...It doesn't have to go so far...",
     imgUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-vector%2Fline-laboratory-research-illustration-cartoon-tiny-scientist-character-working-analyzing-molecular-structure-white_109722-1550.jpg&f=1&nofb=1&ipt=7df4e1be648374e0c4c34d1004cc360601ba323b54d30f143dfeb3f014c9722b&ipo=images",
     img_alt: "scientists-at-work",
     extra_1: "Education is the key ...",
-    extra_2: "... and let's learn from history", 
+    extra_2: "... let's learn from history", 
   }
 ]
 ---
@@ -51,8 +51,8 @@ const sections = [
           <li class="px-6 py-2 w-full">{section.li_4}<span class="strong">{section.strong}</span></li>
           ) : <li class="px-6 py-2 w-full">{section.li_4}</li>
         }
-        {section.li_5&&   <li class="px-6 py-2 w-full">{section.li_5}</li>}
-        {section.extra_2&&<li class="px-6 py-2 w-full font-extrabold">... and let's learn from history</li>}
+        {section.li_5&&<li class="px-6 py-2 w-full">{section.li_5}</li>}
+        {section.extra_2&&<li class="px-6 py-2 w-full font-extrabold">{section.extra_2}</li>}
       </ul>
 
     </aside>

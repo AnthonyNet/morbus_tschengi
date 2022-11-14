@@ -8,7 +8,7 @@ import { formatDate } from '../../utils';
 let posts = await  Astro.glob<BlogPostFrontmatter>('./*.md');
 type Post = MarkdownInstance<BlogPostFrontmatter>;
 
-posts = posts.sort(( num1: Post, num2: Post): number =>{
+posts = posts.sort(( num1: Post, num2: Post): any => {
     if(num1.frontmatter.date > num2.frontmatter.date){
         return -1;
     }

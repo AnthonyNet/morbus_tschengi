@@ -6,7 +6,7 @@ const textHero: Hero[] = [
     heading2: "Information Portal about",
     heading1: "Morbus Tschengi",
     heading2_b: "also known as",
-    blick: "White Disease",
+    blick: "White Plague / Disease",
     heading4: "@discovered by Karel Capek 1937",
     heading2_c: "Symptoms",
   },
@@ -18,7 +18,9 @@ const textHero: Hero[] = [
 >
   {
     textHero.map((item) => (
-      <div class="text-3xl heroText">
+   
+      <div class="flex text-3xl heroText">
+      <article>
         <h2 class="pb-2">{item.heading2}</h2>
         <h1 class="pb-2 blickAnimation text-8xl">{item.heading1} </h1>
         <h2 class="indent-4 p-2">
@@ -34,8 +36,11 @@ const textHero: Hero[] = [
               <span>&#9759;</span>
             </a>
           </h2>
-        </div>
+        </div></article>
+      <aside class="verticalHero text-8xl text-white self-center"><h4>PLAGUE</h4></aside>
+        
       </div>
+      
     ))
   }
 
@@ -50,16 +55,19 @@ const textHero: Hero[] = [
 <script>
   const heroImage = document.querySelector(".heroImage") as HTMLElement;
   const heroSection = document.querySelector(".heroSection") as HTMLElement;
+  const verticalHero = document.querySelector(".verticalHero") as HTMLElement;
 
 
   const mouseIn = () => {
     heroSection.classList.remove("heroDefault");
     heroSection.classList.add("heroScary");
+  //  verticalHero.classList.remove("hidden");
   };
 
   const mouseOut = () => {
     heroSection.classList.remove("heroScary");
     heroSection.classList.add("heroDefault");
+  //  verticalHero.classList.add("hidden");
    
   };
   heroImage?.addEventListener("mouseover", mouseIn);
@@ -71,6 +79,8 @@ const textHero: Hero[] = [
     border: 1px solid red;
   }
 
+
+.verticalHero{writing-mode:vertical-lr;}
   .heroSection {
     width: 100vw;
     max-width: 1920px;
@@ -83,9 +93,19 @@ const textHero: Hero[] = [
     transform: rotateY(0deg);
     transition: 3s;
   }
+  .heroDefault .animSpan {
+    animation: upDown 2s linear infinite;
+  }
+  .heroDefault .blickAnimation {
+    animation: blick 10s linear infinite;
+  }
+
+  .heroScary .heroText .blickAnimation{
+    animation: blickBlack 1x linear infinite;
+  }
   .heroScary {
     background: black;
-    transition: 2s ease-in;
+    transition: 2s ease;
     
   }
   .heroScary .heroImage img {
@@ -95,14 +115,14 @@ const textHero: Hero[] = [
     transition: 2s ease-in-out;
   }
 
-  .heroText {
+  /*.heroText {
     transition: 6s ease-in-out;
-  }
+  }*/
   .heroScary .heroText .blickAnimation
   {
     color:red;
     animation: show 8s ease;
-    opacity: 0;
+    opacity: 100;
   }
   @keyframes show{
     from{opacity:0;}
@@ -143,11 +163,27 @@ const textHero: Hero[] = [
       color: red;
     }
   }
-  .heroDefault .animSpan {
-    animation: upDown 2s linear infinite;
+
+  @keyframes blickBlack {
+    0% {
+      color: rgb(253, 0, 0);
+    }
+    95% {
+      opacity: 100;
+      color: black;
+    }
+    96% {
+      opacity: 0;
+      color: red;
+    }
+    97% {
+      opacity: 100;
+    }
+    100% {
+      opacity: 0;
+      color: red;
+    }
   }
-  .heroDefault .blickAnimation {
-    animation: blick 10s linear infinite;
-  }
+
 
 </style>
