@@ -15,9 +15,9 @@ let imageExists = true;
 
 <Base title="blog post">
    
-    <div class="prose mb-8 text-slate-900 m-auto">
+    <div class="prose my-8 text-slate-900 m-auto">
         {
-            imageExists && <Picture class="mb-8" src={`/images/${slug}.jpg`} widths={[400,600,1024]} sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, 1024px" aspectRatio="5:3"  alt="image"/>
+            imageExists && <Picture class="m-auto mb-8 max-h-[400px]" src={`/images/${slug}.jpg`} widths={[400,600,1024]} sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, 1024px" aspectRatio="2:3"  alt="image"/>
         }
     <slot />
    </div>

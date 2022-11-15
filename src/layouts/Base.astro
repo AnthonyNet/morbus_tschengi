@@ -26,6 +26,9 @@ import Navbar from '../components/Navbar.astro';
 <style is:global>
 	 @import url("https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Noto+Sans:ital,wght@0,500;1,600&display=swap");
 	:root {
+		--max-width:  1920px;
+		--height: calc(100vh - 60px);
+		--max-height: 1080px;
 		--navbar-height: 60px;
 		scroll-padding-top: calc(var(--navbar-height) + 10px);
 		scroll-behavior: smooth;
@@ -41,7 +44,7 @@ import Navbar from '../components/Navbar.astro';
 	}
 	body, main{
 		margin: 0 auto;
-		max-width: 1920px;
+		max-width: var(--max-width);
 	}
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,

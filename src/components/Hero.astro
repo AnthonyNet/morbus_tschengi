@@ -14,38 +14,37 @@ const textHero: Hero[] = [
 ---
 
 <section
-  class="heroSection heroDefault flex justify-around items-center mainPage"
+  class="heroSection heroDefault flex justify-between lg:justify-around items-center px-2 lg:px-10"
 >
-
   {
     textHero.map((item) => (
-   
-      <div class="flex text-3xl heroText">
-      <article>
-        <h2 class="pb-2">{item.heading2}</h2>
-        <h1 class="pb-2 blickAnimation text-8xl">{item.heading1} </h1>
-        <h2 class="indent-4 p-2">
-          {item.heading2_b} <span class="blickAnimation">{item.blick}</span>
-        </h2>
-        <h4 class="indent-4">{item.heading4}</h4>
-        <div class="h-[100px] animSpan">
-          <h2 class="indent-4">
-            <a href="#sections" class="hover:text-red-800">
-              {" "}
-              <span>&#9759;</span>
-              {item.heading2_c}
-              <span>&#9759;</span>
-            </a>
+      <div class="flex text-3xl heroText lg:w-full">
+        <article>
+          <h2 class="pb-2">{item.heading2}</h2>
+          <h1 class="pb-2 blickAnimation text-8xl flex-nowrap">{item.heading1} </h1>
+          <h2 class="indent-4 p-2">
+            {item.heading2_b} <span class="blickAnimation">{item.blick}</span>
           </h2>
-        </div></article>
-      <aside class="verticalHero text-8xl text-white self-center"><h4>PLAGUE</h4></aside>
-        
+          <h4 class="indent-4">{item.heading4}</h4>
+          <div class="h-[100px] animSpan">
+            <h2 class="indent-4">
+              <a href="#sections" class="hover:text-red-800">
+                {" "}
+                <span>&#9759;</span>
+                {item.heading2_c}
+                <span>&#9759;</span>
+              </a>
+            </h2>
+          </div>
+        </article>
+        <aside class="verticalHero text-8xl text-red-500 ">
+          <h4>PLAGUE</h4>
+        </aside>
       </div>
-      
     ))
   }
 
-  <div class="heroImage">
+  <div class="heroImage max-h-[500px]">
     <img
       src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fzombie-clipart-zombie-word-18.png&f=1&nofb=1&ipt=b11b998aa0eae5223d940e45af61a176394248ef1371ed910ea0ec76bc5b374a&ipo=images"
       alt=""
@@ -54,85 +53,80 @@ const textHero: Hero[] = [
 </section>
 
 <script>
+  //Select Hero Section & Hero Image
   const heroImage = document.querySelector(".heroImage") as HTMLElement;
   const heroSection = document.querySelector(".heroSection") as HTMLElement;
-  const verticalHero = document.querySelector(".verticalHero") as HTMLElement;
 
-
+// Image MouseIn and MouseOut events are changing hero section background and fonts color
   const mouseIn = () => {
     heroSection.classList.remove("heroDefault");
     heroSection.classList.add("heroScary");
-  //  verticalHero.classList.remove("hidden");
   };
 
   const mouseOut = () => {
     heroSection.classList.remove("heroScary");
     heroSection.classList.add("heroDefault");
-  //  verticalHero.classList.add("hidden");
-   
   };
   heroImage?.addEventListener("mouseover", mouseIn);
   heroImage?.addEventListener("mouseout", mouseOut);
 </script>
 
 <style>
-
   .border {
     border: 1px solid red;
   }
 
-
-.verticalHero{writing-mode:vertical-lr;}
+  /*Plague hero TEXT */
+  .verticalHero {
+    writing-mode: vertical-lr;
+  }
   .heroSection {
-    width: 100vw;
-    max-width: 1920px;
-    height: calc(100vh - 60px);
+    height: var(--height);
+    max-height: var(--max-height);
     transition: 2s ease-in-out;
     font-family: "Creepster", cursive;
   }
+
 
   .heroDefault .heroImage img {
     transform: rotateY(0deg);
     transition: 3s;
   }
-  .heroDefault .animSpan {
-    animation: upDown 2s linear infinite;
-  }
-  .heroDefault .blickAnimation {
-    animation: blick 10s linear infinite;
-  }
 
-  .heroScary .heroText .blickAnimation{
-    animation: blickBlack 1x linear infinite;
-  }
-  .heroScary {
-    background: black;
-    transition: 2s ease;
-    
-  }
   .heroScary .heroImage img {
     transform: rotateY(180deg);
     -webkit-filter: invert(100%);
     filter: invert(100%);
     transition: 2s ease-in-out;
   }
-
-  /*.heroText {
-    transition: 6s ease-in-out;
-  }*/
-  .heroScary .heroText .blickAnimation
-  {
-    color:red;
+  
+  .heroDefault .animSpan {
+    animation: upDown 2s linear infinite;
+  }
+  .heroDefault .blickAnimation {
+    animation: blick 10s linear infinite;
+  }
+/* Blick animation for black/scary section */
+  .heroScary .heroText .blickAnimation {
+    animation: blickBlack 1x linear infinite;
+  }
+  .heroScary {
+    background: black;
+    transition: 2s ease;
+  }
+  
+  .heroScary .heroText .blickAnimation {
+    color: red;
     animation: show 8s ease;
     opacity: 100;
   }
-  @keyframes show{
-    from{opacity:0;}
-    to{opacity:100}
-  }
-  .mainPage div img {
-    width: 500px;
-    height: 500px;
+  @keyframes show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100;
+    }
   }
 
   @keyframes upDown {
@@ -186,6 +180,55 @@ const textHero: Hero[] = [
       color: red;
     }
   }
- 
 
+  @media screen and (max-width: 1310px){
+    .heroText{
+
+      font-size: 2rem;
+    }
+    .heroText h1{
+     font-size:5rem;
+    }
+  
+}
+
+@media screen and (max-width: 1152px){
+    .heroText{ font-size: 1.5rem; }
+    .heroText h1{font-size:4rem;}
+}
+@media screen and (max-width: 1025px){
+
+   .heroSection .heroImage{
+    width: 40vw;
+   
+   }
+   .heroText h1{
+     font-size:3rem;
+    }
+}
+
+@media screen and (max-width: 750px){
+   .heroSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   }
+   .heroSection .heroImage{
+    width: 60vw;
+   
+   }
+   .heroText h1{
+     font-size:3rem;
+    }
+}
+@media screen and (max-width: 500px){
+
+  .verticalHero{
+    font-size: 20vw;
+  }
+}
+@media screen and (max-height: 730px){
+  .heroSection{height:auto; min-height:100vh; padding: 10vh 0;}
+  }
 </style>

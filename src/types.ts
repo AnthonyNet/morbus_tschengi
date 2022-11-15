@@ -1,6 +1,7 @@
 interface BlogPostFrontmatter {
     title: string;
     date: string;
+    urlImg: string;
 }
 interface IndexPosts{
     titleS: string;

@@ -1,34 +1,50 @@
 ---
-import type { MarkdownInstance } from 'astro';
-import Base from '../../layouts/Base.astro';
-import type { BlogPostFrontmatter } from '../../types';
-import { formatDate } from '../../utils';
+import type { MarkdownInstance } from "astro";
+import SectionsHero from "../../components/SectionsHero.astro";
+import Base from "../../layouts/Base.astro";
+import type { BlogPostFrontmatter } from "../../types";
+import { formatDate } from "../../utils";
 
-
-let posts = await  Astro.glob<BlogPostFrontmatter>('./*.md');
+let posts = await Astro.glob<BlogPostFrontmatter>("./*.md");
 type Post = MarkdownInstance<BlogPostFrontmatter>;
 
-posts = posts.sort(( num1: Post, num2: Post): any => {
-    if(num1.frontmatter.date > num2.frontmatter.date){
-        return -1;
-    }
+posts = posts.sort((num1: Post, num2: Post): any => {
+  if (num1.frontmatter.date > num2.frontmatter.date) {
+    return -1;
+  }
 
-    if(num2.frontmatter.date > num1.frontmatter.date){
-        return 1;
-    }
-})
-
+  if (num2.frontmatter.date > num1.frontmatter.date) {
+    return 1;
+  }
+});
 ---
 
 <Base title="Blog posts">
-    <h2 class="mb-8 text-6xl text-center">Blog posts</h2>
+  <h2 class="mb-8 text-6xl text-center">Blog posts</h2>
 
-    <div class="max-w-[80vw] m-auto">
-        {posts.map(post=>(
-            <div class="py-4 border-b text-left ">
-                <a class="text-green-700 hover:underline" href={post.url}>{post.frontmatter.title}</a>
-                <p>{formatDate(post.frontmatter.date)}</p>
-             </div>
-        ))}
-    </div>
+  <div class="w-[80vw] max-w-[800px] m-auto">
+    {
+      posts.map((post) => (
+        <article class="flex justify-center w-[80vw] max-w-[900px] max-h-[200px] my-4 bg-slate-100 border-y-4">
+            <aside>
+            {" "}
+            <img class="h-[100%] w-[300px]"
+              src={`../../../public/images/${post.frontmatter.urlImg}`}
+              alt=""
+            />
+          </aside>
+
+          <div class="flex flex-col justify-between p-4 border-b ">
+          <div class="headData">
+            <a class="text-green-700 hover:underline" href={post.url}>
+              <strong>{post.frontmatter.title}</strong>
+            </a>
+            <p>{formatDate(post.frontmatter.date)}</p></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto laboriosam voluptatibus aspernatur tempora explicabo quo aperiam eligendi numquam. Animi numquam itaque corporis nobis sint officia veritatis repellendus amet harum beatae!</p>
+          </div>
+        
+        </article>
+      ))
+    }
+  </div>
 </Base>

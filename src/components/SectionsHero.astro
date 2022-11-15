@@ -33,7 +33,7 @@ const sections = [
 ]
 ---
 
-<section id="sections" class="text-3xl">
+<section id="sections" class="text-3xl m-auto lg:max-w-[80vw]">
 
 
   {
@@ -57,7 +57,7 @@ const sections = [
 
     </aside>
     <div class="imageCoverHero flex items-center">
-      <img src={section.imgUrl} alt={section.img_alt} class="max-w-[500px]" /></div>
+      <img src={section.imgUrl} alt={section.img_alt} class="imageCoverHero flex items-center max-w-[500px]" /></div>
   </div>
     ))
   }
@@ -87,10 +87,7 @@ const sections = [
     font-family: Creepster;
     color: red;
   }
-  #sections{
-    margin: 0 auto;
-    max-width: 80vw;
-  }
+ 
 	#sections h2{
 		font-size: 2rem;
 		font-weight: 900;
@@ -110,6 +107,23 @@ const sections = [
 
   .box.show {
     transform: translateX(0);
+  }
+
+  @media (max-width: 975px){
+    #sections .box aside{
+    width: 100vw;
+    z-index: 10;
+    border: 2px solid blue;
+
+    }
+   #sections .imageCoverHero{
+      height: 100%;
+
+        border: 1px solid red;
+    }
+    #sections .imageCoverHero img{
+     /* height: 100px; */
+    }
   }
 
 </style>
