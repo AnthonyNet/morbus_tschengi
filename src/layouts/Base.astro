@@ -52,6 +52,11 @@ import Navbar from '../components/Navbar.astro';
 			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
 
+    .strong {
+    font-family: Creepster;
+    color: var(--color-red);
+  }
+
 	/* OBSERVER STYLES */
   
 	.hide{
@@ -59,7 +64,6 @@ import Navbar from '../components/Navbar.astro';
         filter: blur(5px);
         transform: translateX(100%);
         transition: all 2s;
-        margin-bottom: 100px;
     }
 
 	.hide:nth-of-type(even) {
@@ -82,24 +86,24 @@ import Navbar from '../components/Navbar.astro';
         }
 
         .paragraphs img:nth-child(2){
-            transition-delay: 300ms;
+            transition-delay: 200ms;
 
         }
         .paragraphs img:nth-child(3){
-            transition-delay: 600ms;
+            transition-delay: 400ms;
         }
         .paragraphs img:nth-child(4){
-            transition-delay: 900ms;
+            transition-delay: 600ms;
         }
         .paragraphs img:nth-child(5){
-            transition-delay: 1200ms;
+            transition-delay: 800ms;
         }
 </style>
 
 <script>
 	   const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            console.log(entry)
+           /* console.log(entry)*/
             if(entry.isIntersecting){
                 entry.target.classList.add('show');
             } else {

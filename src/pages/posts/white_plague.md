@@ -1,5 +1,5 @@
 ---
-layout:  "../../layouts/BlogPost.astro" 
+layout:  "../../layouts/BookPost.astro" 
 title: White Plague
 date: 2022-11-11
 urlImg: white_plague.jpg

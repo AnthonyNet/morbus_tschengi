@@ -1,5 +1,5 @@
 ---
-layout:  "../../layouts/BlogPost.astro" 
+layout:  "../../layouts/BookPost.astro" 
 title: R.U.R.
 date: 2022-09-01
 urlImg: rur.jpg

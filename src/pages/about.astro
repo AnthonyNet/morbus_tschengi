@@ -1,42 +1,183 @@
 ---
-import Base from '../layouts/Base.astro';
+import Base from "../layouts/Base.astro";
+
+const techArticles:{imgUrl:string, heading_4:string, skill:number}[] = [
+  {
+    imgUrl:
+      "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-256.png",
+    heading_4: "React",
+    skill: 40,
+  },
+  {
+    imgUrl:
+      "https://cdn3.iconfinder.com/data/icons/teenyicons-outline-vol-3/15/typescript-256.png",
+    heading_4: "TypeScript",
+    skill: 15,
+  },
+  {
+    imgUrl:
+      "https://cdn2.iconfinder.com/data/icons/designer-skills/128/code-programming-javascript-software-develop-command-language-256.png",
+    heading_4: "JavaScript",
+    skill: 50,
+  },
+  {
+    imgUrl:
+      "https://cdn2.iconfinder.com/data/icons/boxicons-logos/24/bxl-nodejs-256.png",
+    heading_4: "NodeJS",
+    skill: 15,
+  },
+  {
+    imgUrl:
+      "https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/php-256.png",
+    heading_4: "PHP",
+    skill: 15,
+  },
+];
+
+const tools:{imgUrl:string, heading_4:string}[] = [
+  {
+    imgUrl:
+      "https://cdn3.iconfinder.com/data/icons/teenyicons-solid-vol-3/15/tailwind-256.png",
+    heading_4: "Tailwind",
+  },
+  {
+    imgUrl:
+      "https://cdn1.iconfinder.com/data/icons/bootstrap-fill-vol-1/16/bootstrap-fill-64.png",
+    heading_4: "BootStrap",
+  },
+  {
+    imgUrl:
+      "https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/71-github-256.png",
+    heading_4: "GitHub",
+  },
+  {
+    imgUrl:
+      "https://cdn1.iconfinder.com/data/icons/ionicons-fill-vol-2/512/logo-vercel-256.png",
+    heading_4: "Vercel",
+  },
+  {
+    imgUrl:
+      "https://cdn2.iconfinder.com/data/icons/flat-seo-web-ikooni/128/flat_seo-13-256.png",
+    heading_4: "Responsive",
+  },
+  {
+    imgUrl:
+      "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/288_Sass_logo-256.png",
+    heading_4: "Sass",
+  },
+  {
+    imgUrl:
+      "https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-256.png",
+    heading_4: "Css",
+  },
+  {
+    imgUrl:
+      "https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-html-5-256.png",
+    heading_4: "Html",
+  },
+];
+
+const graphic:{imgUrl:string, heading_4:string}[] = [
+  {
+    imgUrl:
+      "https://cdn4.iconfinder.com/data/icons/bloomies-webdesign-tools/25/Figma_square-256.png",
+    heading_4: "Figma",
+  },
+  {
+    imgUrl:
+      "https://cdn3.iconfinder.com/data/icons/logos-brands-3/24/logo_brand_brands_logos_adobe_photoshop-256.png",
+    heading_4: "PhotoShop",
+  },
+  {
+    imgUrl:
+      "https://cdn1.iconfinder.com/data/icons/Futurosoft%20Icons%200.5.2/128x128/apps/gimp2_0.png",
+    heading_4: "GIMP",
+  },
+];
 ---
 
 <Base title="About Me">
-<section class="about w-[100vw] h-[100vh] bg-slate-400">
-    <h1>About</h1>
-</section>
-<section class="second hide w-[100vw] h-[100vh] grid place-items-center content-center bg-black text-yellow-100">
-    <h2 class="text-8xl">Second</h2>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis ratione delectus reprehenderit, a soluta, facilis eligendi voluptatibus ab suscipit, eum error nesciunt officia enim laboriosam ea exercitationem provident animi molestiae!</p>
-</section>
+  <section class="about h-auto w-[100vw] md:h-[100vh] text-center">
+    <h2 class="text-3xl">Tech Stack</h2>
+    <h2 class="text-5xl">Programming</h2>
+    <div class="flex flex-wrap justify-between">
+      {
+        techArticles.map((article) => (
+          <article class="flex flex-col items-center w-[50%] my-10 hide">
+            <img class="w-[100px]" src={article.imgUrl} alt="" />
+            <h4 class=" text-xl font-bold">{article.heading_4}</h4>
+            <progress class="w-[50%]" id="file" value={article.skill} max="100"> 32% </progress>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+  <section
+    class="second hide w-[100vw] h-auto md:h-[100vh] text-center bg-teal-200"
+  >
+    <h2 class="text-5xl">Tools</h2>
+    <div class="flex flex-wrap justify-between">
+      {
+        tools.map((article) => (
+          <article class="flex flex-col items-center w-[50%] my-10 hide">
+            <img class="w-[100px]" src={article.imgUrl} alt="" />
+            <h4 class=" text-xl font-bold">{article.heading_4}</h4>
+          </article>
+        ))
+      }
+    </div>
+  </section>
 
-<section class="second hide w-[100vw] h-[100vh] grid place-items-center content-center bg-red-200 text-blue-600">
-    <h2 class="text-8xl">Third</h2>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis ratione delectus reprehenderit, a soluta, facilis eligendi voluptatibus ab suscipit, eum error nesciunt officia enim laboriosam ea exercitationem provident animi molestiae!</p>
-</section>
-<section class="second hide w-[100vw] h-[100vh] grid place-items-center content-center bg-green-200 text-blue-600">
-    <h2 class="text-8xl">Fourth</h2>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis ratione delectus reprehenderit, a soluta, facilis eligendi voluptatibus ab suscipit, eum error nesciunt officia enim laboriosam ea exercitationem provident animi molestiae!</p>
-</section>
+  <section
+    class="second hide w-[100vw] h-auto md:h-[100vh] text-center bg-yellow-400"
+  >
+    <h2 class="text-5xl">Graphic editors</h2>
+    <div class="flex flex-wrap justify-between">
+      {
+        graphic.map((article) => (
+          <article class="flex flex-col items-center w-[50%] my-10 hide last:w-full">
+            <img class="w-[100px]" src={article.imgUrl} alt="" />
+            <h4 class=" text-xl font-bold">{article.heading_4}</h4>
+          </article>
+        ))
+      }
+    </div>
+  </section>
 
-<section class="second hide w-[100vw] h-[100vh] grid place-items-center content-center bg-yellow-400 text-blue-600">
-    <h2 class="text-8xl">Second</h2>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis ratione delectus reprehenderit, a soluta, facilis eligendi voluptatibus ab suscipit, eum error nesciunt officia enim laboriosam ea exercitationem provident animi molestiae!</p>
+ 
+  <section
+    class="second hide w-[100vw] h-[100vh] grid place-items-center content-center bg-green-400 text-blue-600"
+  >
+    <h2 class="text-8xl">Languages</h2>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis
+      ratione delectus reprehenderit, a soluta, facilis eligendi voluptatibus ab
+      suscipit, eum error nesciunt officia enim laboriosam ea exercitationem
+      provident animi molestiae!
+    </p>
     <span class="paragraphs">
-        <img class="w-[100px] hide" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_27729.png&f=1&nofb=1&ipt=a1e02da4f9cf595345963e44d864398c36c4613a331d5da1f4e21ef2bbcc56da&ipo=images" alt="" />
+      <img
+        class="w-[100px] hide"
+        src="https://cdn2.iconfinder.com/data/icons/world-flags-1-1/100/Britain-256.png"
+        alt=""
+      />
 
-        <img class="w-[100px] hide" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_27729.png&f=1&nofb=1&ipt=a1e02da4f9cf595345963e44d864398c36c4613a331d5da1f4e21ef2bbcc56da&ipo=images" alt="" />
+      <img
+        class="w-[100px] hide"
+        src="https://cdn1.iconfinder.com/data/icons/flags-of-the-world-2/128/germany-circle-256.png"
+      />
 
-        <img class="w-[100px] hide" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_27729.png&f=1&nofb=1&ipt=a1e02da4f9cf595345963e44d864398c36c4613a331d5da1f4e21ef2bbcc56da&ipo=images" alt="" />
-
-        <img class="w-[100px] hide" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_27729.png&f=1&nofb=1&ipt=a1e02da4f9cf595345963e44d864398c36c4613a331d5da1f4e21ef2bbcc56da&ipo=images" alt="" />
-     
+      <img
+        class="w-[100px] hide"
+        src="https://cdn0.iconfinder.com/data/icons/world-flags-1/100/Czech-2-256.png"
+        alt=""
+      />
     </span>
-</section>
+  </section>
 </Base>
 
-
 <style>
- 
+  .about div article:nth-child(3) {
+    width: 100%;
+  }
 </style>

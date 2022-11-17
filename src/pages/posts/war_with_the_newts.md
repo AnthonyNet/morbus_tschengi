@@ -1,5 +1,5 @@
 ---
-layout:  "../../layouts/BlogPost.astro" 
+layout:  "../../layouts/BookPost.astro" 
 title: War with the Newts
 date: 2022-09-11
 urlImg: war_with_the_newts.jpg

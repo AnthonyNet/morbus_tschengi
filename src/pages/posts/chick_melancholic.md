@@ -1,5 +1,5 @@
 ---
-layout:  "../../layouts/BlogPost.astro" 
+layout:  "../../layouts/BookPost.astro" 
 title: The Melancholic Chicken
 date: 2022-11-02
 urlImg: chick_melancholic.jpg
