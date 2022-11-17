@@ -21,7 +21,9 @@ const textHero: Hero[] = [
       <div class="flex text-3xl heroText lg:w-full">
         <article>
           <h2 class="pb-2">{item.heading2}</h2>
-          <h1 class="pb-2 blickAnimation text-8xl flex-nowrap">{item.heading1} </h1>
+          <h1 class="pb-2 blickAnimation text-8xl flex-nowrap">
+            {item.heading1}{" "}
+          </h1>
           <h2 class="indent-4 p-2">
             {item.heading2_b} <span class="blickAnimation">{item.blick}</span>
           </h2>
@@ -37,7 +39,7 @@ const textHero: Hero[] = [
             </h2>
           </div>
         </article>
-        <aside class="verticalHero text-8xl text-red-500 ">
+        <aside class="verticalHero text-8xl text-white">
           <h4>PLAGUE</h4>
         </aside>
       </div>
@@ -57,7 +59,7 @@ const textHero: Hero[] = [
   const heroImage = document.querySelector(".heroImage") as HTMLElement;
   const heroSection = document.querySelector(".heroSection") as HTMLElement;
 
-// Image MouseIn and MouseOut events are changing hero section background and fonts color
+  // Image MouseIn and MouseOut events are changing hero section background and fonts color
   const mouseIn = () => {
     heroSection.classList.remove("heroDefault");
     heroSection.classList.add("heroScary");
@@ -87,7 +89,6 @@ const textHero: Hero[] = [
     font-family: "Creepster", cursive;
   }
 
-
   .heroDefault .heroImage img {
     transform: rotateY(0deg);
     transition: 3s;
@@ -99,14 +100,14 @@ const textHero: Hero[] = [
     filter: invert(100%);
     transition: 2s ease-in-out;
   }
-  
+
   .heroDefault .animSpan {
     animation: upDown 2s linear infinite;
   }
   .heroDefault .blickAnimation {
     animation: blick 10s linear infinite;
   }
-/* Blick animation for black/scary section */
+  /* Blick animation for black/scary section */
   .heroScary .heroText .blickAnimation {
     animation: blickBlack 1x linear infinite;
   }
@@ -114,7 +115,7 @@ const textHero: Hero[] = [
     background: black;
     transition: 2s ease;
   }
-  
+
   .heroScary .heroText .blickAnimation {
     color: red;
     animation: show 8s ease;
@@ -181,54 +182,65 @@ const textHero: Hero[] = [
     }
   }
 
-  @media screen and (max-width: 1310px){
-    .heroText{
-
+  @media screen and (max-width: 1310px) {
+    .heroText {
       font-size: 2rem;
     }
-    .heroText h1{
-     font-size:5rem;
+    .heroText h1 {
+      font-size: 5rem;
     }
-  
-}
-
-@media screen and (max-width: 1152px){
-    .heroText{ font-size: 1.5rem; }
-    .heroText h1{font-size:4rem;}
-}
-@media screen and (max-width: 1025px){
-
-   .heroSection .heroImage{
-    width: 40vw;
-   
-   }
-   .heroText h1{
-     font-size:3rem;
-    }
-}
-
-@media screen and (max-width: 750px){
-   .heroSection{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-   }
-   .heroSection .heroImage{
-    width: 60vw;
-   
-   }
-   .heroText h1{
-     font-size:3rem;
-    }
-}
-@media screen and (max-width: 500px){
-
-  .verticalHero{
-    font-size: 20vw;
   }
-}
-@media screen and (max-height: 730px){
-  .heroSection{height:auto; min-height:100vh; padding: 10vh 0;}
+
+  @media screen and (max-width: 1152px) {
+    .heroText {
+      font-size: 1.5rem;
+    }
+    .heroText h1 {
+      font-size: 4rem;
+    }
+  }
+  @media screen and (max-width: 1025px) {
+    .heroSection .heroImage {
+      width: 40vw;
+    }
+    .heroText h1 {
+      font-size: 3rem;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .heroSection{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .heroSection .heroText{
+      margin-top: 2rem;
+      margin-left: 3em;
+    }
+    
+    .heroSection .heroImage {
+      width: 60vw;
+    }
+    .heroText h1 {
+      font-size: 3.5rem;
+    }
+  }
+  @media screen and (max-width: 565px) {
+    .heroSection .heroText{
+      margin-left: 0;
+    }
+    .verticalHero {
+      display: none;
+    }
+  }
+  @media screen and (max-height: 730px) {
+    .heroSection {
+      height: auto;
+      min-height: 100vh;
+      padding: 10vh 0;
+    }
   }
 </style>

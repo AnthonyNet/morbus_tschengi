@@ -1,6 +1,5 @@
 ---
 import type { MarkdownInstance } from "astro";
-import SectionsHero from "../../components/SectionsHero.astro";
 import Base from "../../layouts/Base.astro";
 import type { BlogPostFrontmatter } from "../../types";
 import { formatDate } from "../../utils";
@@ -20,26 +19,28 @@ posts = posts.sort((num1: Post, num2: Post): any => {
 ---
 
 <Base title="Blog posts">
-  <h2 class="mb-8 text-6xl text-center">Blog posts</h2>
 
-  <div class="w-[80vw] max-w-[800px] m-auto">
+    <h2 class="mb-8 text-4xl sm:text-6xl text-center mt-4">Favorite books</h2>
+ 
+
+  <div class="w-auto sm:w-[80vw] max-w-[800px] m-auto">
     {
       posts.map((post) => (
-        <article class="flex justify-center w-[80vw] max-w-[900px] max-h-[200px] my-4 bg-slate-100 border-y-4">
+        <article class="flex justify-center sm:w-[80vw] max-w-[900px] max-h-[400px] sm:max-h-[200px] my-4 bg-slate-100 border-y-4">
             <aside>
-            {" "}
-            <img class="h-[100%] w-[300px]"
+            
+            <img class="h-[100%] w-[800px] sm:w-[300px]"
               src={`../../../public/images/${post.frontmatter.urlImg}`}
               alt=""
             />
           </aside>
 
-          <div class="flex flex-col justify-between p-4 border-b ">
+          <div class="flex flex-col justify-between px-2 sm:px-0 sm:p-4 border-b ">
           <div class="headData">
             <a class="text-green-700 hover:underline" href={post.url}>
               <strong>{post.frontmatter.title}</strong>
             </a>
-            <p>{formatDate(post.frontmatter.date)}</p></div>
+            <p class="font-bold">{formatDate(post.frontmatter.date)}</p></div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto laboriosam voluptatibus aspernatur tempora explicabo quo aperiam eligendi numquam. Animi numquam itaque corporis nobis sint officia veritatis repellendus amet harum beatae!</p>
           </div>
         

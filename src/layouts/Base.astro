@@ -50,4 +50,62 @@ import Navbar from '../components/Navbar.astro';
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
+
+	/* OBSERVER STYLES */
+  
+	.hide{
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(100%);
+        transition: all 2s;
+        margin-bottom: 100px;
+    }
+
+	.hide:nth-of-type(even) {
+		transform: translateX(-100%);
+       
+	}
+    .show{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0)!important;
+
+        }
+   
+/* About section icons animation*/
+        .paragraphs{
+            display: flex;
+        }
+        .paragraphs img{
+            margin-right: 20px;
+        }
+
+        .paragraphs img:nth-child(2){
+            transition-delay: 300ms;
+
+        }
+        .paragraphs img:nth-child(3){
+            transition-delay: 600ms;
+        }
+        .paragraphs img:nth-child(4){
+            transition-delay: 900ms;
+        }
+        .paragraphs img:nth-child(5){
+            transition-delay: 1200ms;
+        }
 </style>
+
+<script>
+	   const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry)
+            if(entry.isIntersecting){
+                entry.target.classList.add('show');
+            } else {
+                entry.target.classList.remove('show');
+            }
+        });
+    })
+    const hiddenElements = document.querySelectorAll('.hide');
+    hiddenElements.forEach((el) => observer.observe(el));
+</script>

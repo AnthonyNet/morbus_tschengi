@@ -1,98 +1,134 @@
 ---
 const sections = [
   {
-    heading: "Rabies, animal fury" ,
+    heading: "Rabies, animal fury",
     li_1: "Gradual reduction of self-reflection.",
     li_2: "Typical is to blame foreigners and the government for one's failures in life.",
     li_3: "At first, harmless grumbling turns into hatred, first to foreigners, to the government, and later to all uninfected.",
     li_4: "Infected individuals rally themselves, the virus multiplies and symptoms intensify.  This is what we call",
     strong: " the third phase.",
     li_5: "Sympathy with equally violent groups and regimes is typical.",
-    imgUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-vector%2Fzombie-cartoon_61878-230.jpg&f=1&nofb=1&ipt=7dcc9e33f3f963c46baa53a7d82897ef21c0be710c920df18a2fba2e5c416cf3&ipo=images",
-    img_alt: "hungry-zombie" 
+    imgUrl:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-vector%2Fzombie-cartoon_61878-230.jpg&f=1&nofb=1&ipt=7dcc9e33f3f963c46baa53a7d82897ef21c0be710c920df18a2fba2e5c416cf3&ipo=images",
+    img_alt: "hungry-zombie",
   },
   {
-    heading: "Internet spreading" ,
+    heading: "Internet spreading",
     li_1: "Infected hosts are often active online.",
     li_2: "In the online world, self-reflection is wholly suppressed.",
     li_3: "It is not yet known how the virus spreads online. It probably forces the infected hosts to lure uninfected individuals into clusters of already infected ones.",
     li_4: "Vulnerable groups and people in difficult life situations are often the target.",
-    imgUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F2.bp.blogspot.com%2F-Rk16gzFG6bE%2FUdmKcFLGYgI%2FAAAAAAABoSQ%2FuF9D8ROklA0%2Fs1600%2FInternet%2BTroll%2B101.jpg&f=1&nofb=1&ipt=5186d2ac2854507fa6a7e3409757d0ccd4a33aa84ac3d2ad670fb0645651572c&ipo=images",
-    img_alt: "internet-troll-with-rabies" 
+    imgUrl:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F2.bp.blogspot.com%2F-Rk16gzFG6bE%2FUdmKcFLGYgI%2FAAAAAAABoSQ%2FuF9D8ROklA0%2Fs1600%2FInternet%2BTroll%2B101.jpg&f=1&nofb=1&ipt=5186d2ac2854507fa6a7e3409757d0ccd4a33aa84ac3d2ad670fb0645651572c&ipo=images",
+    img_alt: "internet-troll-with-rabies",
   },
   {
-    heading: "The only cure is prevention" ,
+    heading: "The only cure is prevention",
     li_1: "The virus is demonstrably unable to endure increased cognitive (brain) activity, which it is constantly trying to suppress.",
     li_2: "According to the research of Dr. Galen from the Lilienthal´s University Clinic, with the right use of education, self-criticism, compassion and information, the prototype vaccine is effective.",
     li_3: "...It doesn't have to go so far...",
-    imgUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-vector%2Fline-laboratory-research-illustration-cartoon-tiny-scientist-character-working-analyzing-molecular-structure-white_109722-1550.jpg&f=1&nofb=1&ipt=7df4e1be648374e0c4c34d1004cc360601ba323b54d30f143dfeb3f014c9722b&ipo=images",
+    imgUrl:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-vector%2Fline-laboratory-research-illustration-cartoon-tiny-scientist-character-working-analyzing-molecular-structure-white_109722-1550.jpg&f=1&nofb=1&ipt=7df4e1be648374e0c4c34d1004cc360601ba323b54d30f143dfeb3f014c9722b&ipo=images",
     img_alt: "scientists-at-work",
     extra_1: "Education is the key ...",
-    extra_2: "... let's learn from history", 
-  }
-]
+    extra_2: "... let's learn from history",
+  },
+];
 ---
 
-<section id="sections" class="text-3xl m-auto lg:max-w-[80vw]">
-
-
+<section id="sections" class="m-auto lg:max-w-[80vw]">
   {
-    sections.map(section=>(
-    <div class="box flex justify-between gap-4 max-w[300px]">
-    <aside>
-      <h2>{section.heading}</h2>
-      <ul class= "text-gray-900">
-        <li class="px-6 py-2 w-full">{section.li_1}</li>
-        {section.extra_1&& <li class="px-6 py-2 w-full font-extrabold">Education is the key ...</li>}
-        <li class="px-6 py-2 w-full">{section.li_2}</li>
-        <li class="px-6 py-2 w-full">{section.li_3}</li>
-        {
-          section.strong?(
-          <li class="px-6 py-2 w-full">{section.li_4}<span class="strong">{section.strong}</span></li>
-          ) : <li class="px-6 py-2 w-full">{section.li_4}</li>
-        }
-        {section.li_5&&<li class="px-6 py-2 w-full">{section.li_5}</li>}
-        {section.extra_2&&<li class="px-6 py-2 w-full font-extrabold">{section.extra_2}</li>}
-      </ul>
+    sections.map((section) => (
+      <div class="sectionCover hide flex justify-between even:flex-row-reverse sm:p-4 md:text-3xl sm:text-[3vw] text[5vw]">
+        <aside class="w-full odd:pl-2 sm:odd:pl-0">
+          <h2 class="font-bold">{section.heading}</h2>
+          <ul class="text-gray-900">
+            <li class="sm:pl-6 pl-2 py-2 w-full">{section.li_1}</li>
+            {section.extra_1 && (
+              <li class="sm:pl-6 pl-2 py-2 w-full font-extrabold">
+                {section.extra_1}
+              </li>
+            )}
+            <li class="sm:pl-6 pl-2 py-2 w-full">{section.li_2}</li>
+            <li class="sm:pl-6 pl-2 py-2 w-full">{section.li_3}</li>
+            {section.strong ? (
+              <li class="sm:pl-6 pl-2 py-2 w-full">
+                {section.li_4}
+                <span class="strong">{section.strong}</span>
+              </li>
+            ) : (
+              <li class="sm:pl-6 pl-2 py-2 w-full">{section.li_4}</li>
+            )}
+            {section.li_5 && <li class="sm:pl-6 pl-2 py-2 w-full">{section.li_5}</li>}
+            {section.extra_2 && (
+              <li class="sm:pl-6 pl-2 py-2 w-full font-extrabold">{section.extra_2}</li>
+            )}
+          </ul>
+        </aside>
 
-    </aside>
-    <div class="imageCoverHero flex items-center">
-      <img src={section.imgUrl} alt={section.img_alt} class="imageCoverHero flex items-center max-w-[500px]" /></div>
-  </div>
+        <div class="imageCoverHero flex items-center">
+          <img class="w-[30vw]   lg:w-[40vw] max-w-[500px]"
+          src={section.imgUrl} alt={section.img_alt} />
+        </div>
+      </div>
     ))
   }
 
-  <div class="box flex justify-center">
-
-      <ul class= "text-gray-900">MARSHAL (to the crowd)
-        <li class="indent-6">At this very moment and at my command our planes are ravaging the cities of the perfidious enemy. (Cheers) </li>
-         <li class="indent-6">The time has come for me to justify my action to you, the Nation.
-          (The CROWD shouts, 'Long life the Marshal! All hail the Marshal!')</li>
-         <li class="indent-6">If I entered upon a policy of war with no formal declaration of war, I did so to spare the thousands of your sons and daughters who are scoring the first of many victories at this very moment. Now I come before you to ask for your approval. (The CROWD chants, 'We want war!').</li>
-           <li class="indent-6">I see no reason to enter into a bargaining session with a band of scoundrels, (The CROWD cheers). They have long provoked and insulted our great Nation from without and now seem determined to undermine it from within!</li>
-           <li class="indent-6">(The CROWD shouts, 'Death to all traitors!'). The only way to deal with this thom in our side-this inferior, insignificant little people-is to wipe it off the face of the earth. (The CROWD chants, ' We want war!').
-            No matter who its protectors are, no matter how they respond to our challenge, let me state unequivocally that we are afraid of no one! (The CROWD shouts, 'We want war! Long live the Marshall! We want War!').
-            I knew you would stand by me. And I know you will stand by me when I proclaim to the entire world: </li>
-            <li>We did not want this war, but we shall win it, <strong>Victory is ours! ...</strong></li>
-      </ul>
-
+  <div class="p-2 hide flex justify-center">
+    <ul class="text-gray-900">
+      MARSHAL (to the crowd)
+      <li class="indent-6">
+        At this very moment and at my command our planes are ravaging the cities
+        of the perfidious enemy. (Cheers)
+      </li>
+      <li class="indent-6">
+        The time has come for me to justify my action to you, the Nation. (The
+        CROWD shouts, 'Long life the Marshal! All hail the Marshal!')
+      </li>
+      <li class="indent-6">
+        If I entered upon a policy of war with no formal declaration of war, I
+        did so to spare the thousands of your sons and daughters who are scoring
+        the first of many victories at this very moment. Now I come before you
+        to ask for your approval. (The CROWD chants, 'We want war!').
+      </li>
+      <li class="indent-6">
+        I see no reason to enter into a bargaining session with a band of
+        scoundrels, (The CROWD cheers). They have long provoked and insulted our
+        great Nation from without and now seem determined to undermine it from
+        within!
+      </li>
+      <li class="indent-6">
+        (The CROWD shouts, 'Death to all traitors!'). The only way to deal with
+        this thom in our side-this inferior, insignificant little people-is to
+        wipe it off the face of the earth. (The CROWD chants, ' We want war!').
+        No matter who its protectors are, no matter how they respond to our
+        challenge, let me state unequivocally that we are afraid of no one! (The
+        CROWD shouts, 'We want war! Long live the Marshall! We want War!'). I
+        knew you would stand by me. And I know you will stand by me when I
+        proclaim to the entire world:
+      </li>
+      <li>
+        We did not want this war, but we shall win it, <strong
+          >Victory is ours! ...</strong
+        >
+      </li>
+    </ul>
   </div>
 </section>
 
-<style> 
-
-
-/*.resize{overflow:auto;resizeY:both;}*/
-  .strong{
+<style>
+ 
+  .strong {
     font-family: Creepster;
     color: red;
   }
- 
-	#sections h2{
-		font-size: 2rem;
-		font-weight: 900;
-	}
-  .box {
+
+</style>
+<!-- 
+OLD ANIMATION SECTION CODE
+ -->
+<style>
+  /* box {
    
     margin: 5em 0;
     border-radius: 10px;
@@ -107,28 +143,11 @@ const sections = [
 
   .box.show {
     transform: translateX(0);
-  }
-
-  @media (max-width: 975px){
-    #sections .box aside{
-    width: 100vw;
-    z-index: 10;
-    border: 2px solid blue;
-
-    }
-   #sections .imageCoverHero{
-      height: 100%;
-
-        border: 1px solid red;
-    }
-    #sections .imageCoverHero img{
-     /* height: 100px; */
-    }
-  }
-
+  } */
 </style>
 
 <script>
+  /*
   const boxes = document.querySelectorAll(".box");
 
   const checkBoxes: any = () => {
@@ -145,5 +164,5 @@ const sections = [
     });
   };
   checkBoxes();
-  window.addEventListener("scroll", checkBoxes);
+  window.addEventListener("scroll", checkBoxes);*/
 </script>

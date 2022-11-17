@@ -5,7 +5,7 @@ const items = [
         path: '/'
     },
     {
-        title: 'Blog',
+        title: 'Books',
         path: '/posts'
     },
     {
@@ -16,7 +16,7 @@ const items = [
 ---
 
 <nav class="flex bg-black text-white top-0 sticky z-10">
-    <div class="font-bold text-4xl self-center ml-4">
+    <div class="font-bold text-4xl self-center ml-2 sm:ml-4">
         AZ
     </div>
 
@@ -24,7 +24,7 @@ const items = [
         <ul class="flex self-center text-3xl">
             {
                 items.map(item=>(
-                <li><a class="block hover:bg-gray-700 self-center mr-10" href={item.path}>{item.title}</a></li>
+                <li><a class="block hover:bg-gray-700 self-center mr-2 sm:mr-10" href={item.path}>{item.title}</a></li>
                 ))
             }
         </ul>
