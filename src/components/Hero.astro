@@ -14,7 +14,7 @@ const textHero: Hero[] = [
 ---
 
 <section
-  class="heroSection heroDefault flex justify-between lg:justify-around items-center px-2 lg:px-10"
+  class="heroSection heroDefault w-full flex justify-between lg:justify-around items-center px-2 lg:px-10"
 >
   {
     textHero.map((item) => (
@@ -84,7 +84,6 @@ const textHero: Hero[] = [
   }
   .heroSection {
     height: var(--height);
-    max-height: var(--max-height);
     transition: 2s ease-in-out;
     font-family: "Creepster", cursive;
   }
