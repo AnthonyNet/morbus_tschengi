@@ -1,0 +1,169 @@
+.border {
+    border: 1px solid red;
+  }
+
+  /*Plague hero TEXT */
+  .verticalHero {
+    writing-mode: vertical-lr;
+  }
+  .heroSection {
+    height: var(--height);
+    max-height: var(--max-height);
+    transition: 2s ease-in-out;
+    font-family: "Creepster", cursive;
+  }
+
+  .heroDefault .heroImage img {
+    transform: rotateY(0deg);
+    transition: 3s;
+  }
+
+  .heroScary .heroImage img {
+    transform: rotateY(180deg);
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    transition: 2s ease-in-out;
+  }
+
+  .heroDefault .animSpan {
+    animation: upDown 2s linear infinite;
+  }
+  .heroDefault .blickAnimation {
+    animation: blick 10s linear infinite;
+  }
+  /* Blick animation for black/scary section */
+  .heroScary .heroText .blickAnimation {
+    animation: blickBlack 1x linear infinite;
+  }
+  .heroScary {
+    background: black;
+    transition: 2s ease;
+  }
+
+  .heroScary .heroText .blickAnimation {
+    color: red;
+    animation: show 8s ease;
+    opacity: 100;
+  }
+  @keyframes show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100;
+    }
+  }
+
+  @keyframes upDown {
+    0% {
+      padding-top: 0px;
+    }
+
+    50% {
+      padding-top: 20px;
+    }
+  }
+
+  @keyframes blick {
+    0% {
+      color: black;
+    }
+    95% {
+      opacity: 100;
+      color: black;
+    }
+    96% {
+      opacity: 0;
+      color: red;
+    }
+    97% {
+      opacity: 100;
+    }
+    100% {
+      opacity: 0;
+      color: red;
+    }
+  }
+
+  @keyframes blickBlack {
+    0% {
+      color: rgb(253, 0, 0);
+    }
+    95% {
+      opacity: 100;
+      color: black;
+    }
+    96% {
+      opacity: 0;
+      color: red;
+    }
+    97% {
+      opacity: 100;
+    }
+    100% {
+      opacity: 0;
+      color: red;
+    }
+  }
+
+  @media screen and (max-width: 1310px) {
+    .heroText {
+      font-size: 2rem;
+    }
+    .heroText h1 {
+      font-size: 5rem;
+    }
+  }
+
+  @media screen and (max-width: 1152px) {
+    .heroText {
+      font-size: 1.5rem;
+    }
+    .heroText h1 {
+      font-size: 4rem;
+    }
+  }
+  @media screen and (max-width: 1025px) {
+    .heroSection .heroImage {
+      width: 40vw;
+    }
+    .heroText h1 {
+      font-size: 3rem;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .heroSection{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .heroSection .heroText{
+      margin-top: 2rem;
+      margin-left: 3em;
+    }
+    
+    .heroSection .heroImage {
+      width: 60vw;
+    }
+    .heroText h1 {
+      font-size: 3.5rem;
+    }
+  }
+  @media screen and (max-width: 565px) {
+    .heroSection .heroText{
+      margin-left: 0;
+    }
+    .verticalHero {
+      display: none;
+    }
+  }
+  @media screen and (max-height: 730px) {
+    .heroSection {
+      height: auto;
+      min-height: 100vh;
+      padding: 10vh 0;
+    }
+  }
