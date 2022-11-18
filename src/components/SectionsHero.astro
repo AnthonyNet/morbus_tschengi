@@ -39,29 +39,29 @@ const sections = [
 <section id="sections" class="m-auto lg:max-w-[80vw]">
   {
     sections.map((section) => (
-      <div class="sectionCover hide flex justify-between even:flex-row-reverse sm:p-4 md:text-3xl sm:text-[3vw] text[5vw]">
-        <aside class="w-full odd:pl-2 sm:odd:pl-0">
-          <h2 class="font-bold">{section.heading}</h2>
-          <ul class="text-gray-900">
-            <li class="sm:pl-6 pl-2 py-2 w-full">{section.li_1}</li>
+      <div class="sectionCover min-h-[100vh] hide flex justify-between even:flex-row-reverse sm:p-4 md:text-3xl sm:text-[3vw] text[5vw]">
+        <aside class="w-full h-auto odd:pl-2 sm:odd:pl-0 flex flex-col justify-center">
+          <ul class="text-gray-900 flex flex-col justify-center h-full">
+            <li class="sm:pl-6 text-3xl pl-2 py-2 font-extrabold">{section.heading}</li>
+            <li class="sm:pl-6 pl-2 py-2">{section.li_1}</li>
             {section.extra_1 && (
-              <li class="sm:pl-6 pl-2 py-2 w-full font-extrabold">
+              <li class="sm:pl-6 pl-2 py-2 font-extrabold">
                 {section.extra_1}
               </li>
             )}
-            <li class="sm:pl-6 pl-2 py-2 w-full">{section.li_2}</li>
-            <li class="sm:pl-6 pl-2 py-2 w-full">{section.li_3}</li>
+            <li class="sm:pl-6 pl-2 py-2">{section.li_2}</li>
+            <li class="sm:pl-6 pl-2 py-2">{section.li_3}</li>
             {section.strong ? (
-              <li class="sm:pl-6 pl-2 py-2 w-full">
+              <li class="sm:pl-6 pl-2 py-2">
                 {section.li_4}
                 <span class="strong">{section.strong}</span>
               </li>
             ) : (
-              <li class="sm:pl-6 pl-2 py-2 w-full">{section.li_4}</li>
+              <li class="sm:pl-6 pl-2 py-2">{section.li_4}</li>
             )}
-            {section.li_5 && <li class="sm:pl-6 pl-2 py-2 w-full">{section.li_5}</li>}
+            {section.li_5 && <li class="sm:pl-6 pl-2 py-2">{section.li_5}</li>}
             {section.extra_2 && (
-              <li class="sm:pl-6 pl-2 py-2 w-full font-extrabold">{section.extra_2}</li>
+              <li class="sm:pl-6 pl-2 py-2 font-extrabold">{section.extra_2}</li>
             )}
           </ul>
         </aside>
@@ -74,8 +74,8 @@ const sections = [
     ))
   }
 
-  <div class="p-2 hide flex justify-center">
-    <ul class="text-gray-900">
+  <div class="h-[100vh] p-2 hide flex justify-center">
+    <ul class="text-gray-900 flex flex-col justify-center">
       MARSHAL (to the crowd)
       <li class="indent-6">
         At this very moment and at my command our planes are ravaging the cities
