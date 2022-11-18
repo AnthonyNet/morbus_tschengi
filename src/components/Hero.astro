@@ -14,11 +14,11 @@ const textHero: Hero[] = [
 ---
 
 <section
-  class="heroSection heroDefault w-full flex justify-between lg:justify-around items-center px-2 lg:px-10"
+  class="heroSection heroDefault w-full flex flex-col md:flex-row justify-between lg:justify-around items-center px-2 lg:px-10"
 >
   {
     textHero.map((item) => (
-      <div class="flex text-3xl heroText lg:w-full">
+      <div class="flex heroText lg:w-full">
         <article>
           <h2 class="pb-2">{item.heading2}</h2>
           <h1 class="pb-2 blickAnimation text-8xl flex-nowrap">
@@ -31,7 +31,6 @@ const textHero: Hero[] = [
           <div class="h-[100px] animSpan">
             <h2 class="indent-4">
               <a href="#sections" class="hover:text-red-800">
-                {" "}
                 <span>&#9759;</span>
                 {item.heading2_c}
                 <span>&#9759;</span>
@@ -182,13 +181,15 @@ const textHero: Hero[] = [
   }
 
   @media screen and (max-width: 1310px) {
+    /*
     .heroText {
       font-size: 2rem;
     }
     .heroText h1 {
       font-size: 5rem;
     }
-  }
+  }*/
+}
 
   @media screen and (max-width: 1152px) {
     .heroText {
