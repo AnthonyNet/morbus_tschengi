@@ -14,7 +14,7 @@ const textHero: Hero[] = [
 ---
 
 <section
-  class="heroSection heroDefault flex flex-col h-auto max-w-[1920px] w-[100vw] min-h-[100vh] justify-center items-center lg:flex-row lg:py-0 lg:justify-around lg:pl-4"
+  class="heroSection heroDefault flex flex-col h-auto max-w-[1920px] w-[100vw] justify-center items-center lg:flex-row lg:py-0 lg:justify-around lg:pl-4"
 >
   {
     textHero.map((item) => (
@@ -45,7 +45,7 @@ const textHero: Hero[] = [
     ))
   }
 
-  <div class="heroImage sm:w-[500px]">
+  <div class="heroImage w-[70vw] sm:w-[500px]">
     <img
       src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fzombie-clipart-zombie-word-18.png&f=1&nofb=1&ipt=b11b998aa0eae5223d940e45af61a176394248ef1371ed910ea0ec76bc5b374a&ipo=images"
       alt=""
@@ -85,6 +85,7 @@ const textHero: Hero[] = [
     max-height: var(--max-height);
     transition: 2s ease-in-out;
     font-family: "Creepster", cursive;
+    height: calc(100vh - 60px);
   }
 
   .heroDefault .heroImage img {
