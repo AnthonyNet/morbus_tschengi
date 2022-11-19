@@ -39,7 +39,7 @@ const sections = [
 <section id="sections" class="m-auto lg:max-w-[80vw]">
   {
     sections.map((section) => (
-      <div class="sectionCover min-h-[100vh] hide flex justify-between even:flex-row-reverse sm:p-4 md:text-3xl sm:text-[3vw] text[5vw]">
+      <div class="sectionCover h-auto sm:min-h-[50vh]   hide flex justify-between even:flex-row-reverse py-10 md:py-0 sm:p-4 md:text-3xl sm:text-[3vw] text[5vw]">
         <aside class="w-full h-auto odd:pl-2 sm:odd:pl-0 flex flex-col justify-center">
           <ul class="text-gray-900 flex flex-col justify-center h-full">
             <li class="sm:pl-6 text-3xl pl-2 py-2 font-extrabold">{section.heading}</li>
@@ -74,8 +74,8 @@ const sections = [
     ))
   }
 
-  <div class="h-[100vh] p-2 hide flex justify-center">
-    <ul class="text-gray-900 flex flex-col justify-center">
+  <div class="sm:min-h-[100vh] p-2 hide flex justify-center">
+    <ul class="text-gray-900 flex flex-col justify-center text-xl sm:text-2xl">
       MARSHAL (to the crowd)
       <li class="indent-6">
         At this very moment and at my command our planes are ravaging the cities

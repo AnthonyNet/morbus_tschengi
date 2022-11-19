@@ -48,9 +48,7 @@ import Navbar from '../components/Navbar.astro';
         overflow-x: hidden;
 	}
 
-    body{
-        width: 100vw;
-    }
+   
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
@@ -67,8 +65,16 @@ import Navbar from '../components/Navbar.astro';
         opacity: 0;
         filter: blur(5px);
         transform: translateX(100%);
-        transition: all 2s;
+        transition: all 1s;
     }
+
+    .logo_Hide{
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-100%);
+        transition: all 1s;
+    }
+
 
 	.hide:nth-of-type(even) {
 		transform: translateX(-100%);
@@ -81,27 +87,27 @@ import Navbar from '../components/Navbar.astro';
 
         }
    
-/* About section icons animation*/
-        .paragraphs{
-            display: flex;
-        }
-        .paragraphs img{
-            margin-right: 20px;
-        }
-
-        .paragraphs img:nth-child(2){
-            transition-delay: 200ms;
-
-        }
-        .paragraphs img:nth-child(3){
-            transition-delay: 400ms;
-        }
-        .paragraphs img:nth-child(4){
+/* About section logos animation*/
+        
+      
+        .logo_Hide:nth-child(1){
             transition-delay: 600ms;
+
         }
-        .paragraphs img:nth-child(5){
+        .logo_Hide:nth-child(2){
             transition-delay: 800ms;
+
         }
+         .logo_Hide:nth-child(3){
+            transition-delay: 1000ms;
+        }
+         .logo_Hide:nth-child(4){
+            transition-delay: 1200ms;
+        }
+         .logo_Hide:nth-child(5){
+            transition-delay: 1200ms;
+        }
+      
 </style>
 
 <script>
@@ -115,6 +121,6 @@ import Navbar from '../components/Navbar.astro';
             }
         });
     })
-    const hiddenElements = document.querySelectorAll('.hide');
+    const hiddenElements = document.querySelectorAll('.hide, .logo_Hide');
     hiddenElements.forEach((el) => observer.observe(el));
 </script>

@@ -1,7 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 
-const techArticles:{imgUrl:string, heading_4:string, skill:number}[] = [
+const techArticles: { imgUrl: string; heading_4: string; skill: number }[] = [
   {
     imgUrl:
       "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-256.png",
@@ -34,7 +34,7 @@ const techArticles:{imgUrl:string, heading_4:string, skill:number}[] = [
   },
 ];
 
-const tools:{imgUrl:string, heading_4:string}[] = [
+const tools: { imgUrl: string; heading_4: string }[] = [
   {
     imgUrl:
       "https://cdn3.iconfinder.com/data/icons/teenyicons-solid-vol-3/15/tailwind-256.png",
@@ -77,7 +77,7 @@ const tools:{imgUrl:string, heading_4:string}[] = [
   },
 ];
 
-const graphic:{imgUrl:string, heading_4:string}[] = [
+const graphic: { imgUrl: string; heading_4: string }[] = [
   {
     imgUrl:
       "https://cdn4.iconfinder.com/data/icons/bloomies-webdesign-tools/25/Figma_square-256.png",
@@ -97,31 +97,23 @@ const graphic:{imgUrl:string, heading_4:string}[] = [
 ---
 
 <Base title="About Me">
-  <section class="about h-auto w-full md:h-[100vh] text-center">
-    <h2 class="text-3xl">Tech Stack</h2>
-    <h2 class="text-5xl">Programming</h2>
-    <div class="flex flex-wrap justify-between">
+  <section class="about w-full h-auto text-center bg-indigo-600 text-blue-300">
+    <h2 class="text-3xl font-bold">Tech Stack</h2>
+    <h2 class="text-5xl font-bold">Programming</h2>
+    <div class="md:w-[800px] m-auto flex flex-wrap justify-around items-center">
       {
         techArticles.map((article) => (
           <article class="flex flex-col items-center w-[50%] my-10 hide">
             <img class="w-[100px]" src={article.imgUrl} alt="" />
             <h4 class=" text-xl font-bold">{article.heading_4}</h4>
-            <progress class="w-[50%]" id="file" value={article.skill} max="100"> 32% </progress>
-          </article>
-        ))
-      }
-    </div>
-  </section>
-  <section
-    class="hide w-[100vw] h-auto md:h-[100vh] text-center bg-teal-200"
-  >
-    <h2 class="text-5xl">Tools</h2>
-    <div class="flex flex-wrap justify-between">
-      {
-        tools.map((article) => (
-          <article class="flex flex-col items-center w-[50%] my-10 hide">
-            <img class="w-[100px]" src={article.imgUrl} alt="" />
-            <h4 class=" text-xl font-bold">{article.heading_4}</h4>
+            <progress
+              class="w-[50%] bg-indigo-50 border-4 border-blue-300 rounded-full"
+              id="file"
+              value={article.skill}
+              max="100"
+            >
+              32%
+            </progress>
           </article>
         ))
       }
@@ -129,50 +121,80 @@ const graphic:{imgUrl:string, heading_4:string}[] = [
   </section>
 
   <section
-    class="hide w-[100vw] h-auto md:h-[100vh] text-center bg-yellow-400"
-  >
-    <h2 class="text-5xl">Graphic editors</h2>
-    <div class="flex flex-wrap justify-between">
-      {
-        graphic.map((article) => (
-          <article class="flex flex-col items-center w-[50%] my-10 hide last:w-full">
-            <img class="w-[100px]" src={article.imgUrl} alt="" />
-            <h4 class=" text-xl font-bold">{article.heading_4}</h4>
-          </article>
-        ))
-      }
-    </div>
-  </section>
-
- 
-  <section
-    class="hide w-[100vw] h-[100vh] grid place-items-center content-center bg-green-400 text-blue-600"
+    class="hide w-[100vw] md:max-w-[1000px] md:m-auto min-h-[800px] h-auto grid place-items-center content-around sm:content-center text-blue-600"
   >
     <h2 class="text-8xl">Languages</h2>
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis
-      ratione delectus reprehenderit, a soluta, facilis eligendi voluptatibus ab
-      suscipit, eum error nesciunt officia enim laboriosam ea exercitationem
-      provident animi molestiae!
-    </p>
-    <span class="paragraphs">
-      <img
-        class="w-[60px] hide"
-        src="https://cdn2.iconfinder.com/data/icons/world-flags-1-1/100/Britain-256.png"
-        alt=""
-      />
 
-      <img
-        class="w-[60px] hide"
-        src="https://cdn1.iconfinder.com/data/icons/flags-of-the-world-2/128/germany-circle-256.png"
-      />
+    <div class="logos grid sm:grid-cols-3 sm:gap-6 md:gap-14">
+      <div class="logo_Hide my-8">
+        <img
+          class="w-[100px] m-auto"
+          src="https://cdn2.iconfinder.com/data/icons/world-flags-1-1/100/Britain-256.png"
+          alt=""
+        />
+        <progress
+          class="bg-indigo-50 border-4 border-blue-300 rounded-full"
+          id="file"
+          value="52"
+          max="100"></progress>
+      </div>
 
-      <img
-        class="w-[60px] hide"
-        src="https://cdn0.iconfinder.com/data/icons/world-flags-1/100/Czech-2-256.png"
-        alt=""
-      />
-    </span>
+      <div class="logo_Hide my-8">
+        <img
+          class="w-[100px] m-auto"
+          src="https://cdn1.iconfinder.com/data/icons/flags-of-the-world-2/128/germany-circle-256.png"
+        />
+        <progress
+          class="bg-indigo-50 border-4 border-blue-300 rounded-full"
+          id="file"
+          value="52"
+          max="100"></progress>
+      </div>
+      <div class="logo_Hide my-8">
+        <img
+          class="w-[100px] m-auto"
+          src="https://cdn0.iconfinder.com/data/icons/world-flags-1/100/Czech-2-256.png"
+          alt=""
+        />
+        <progress
+          class="bg-indigo-50 border-4 border-blue-300 rounded-full"
+          id="file"
+          value="92"
+          max="100"></progress>
+      </div>
+    </div>
+  </section>
+
+  <section class="hide w-full h-auto text-center bg-purple-600 text-violet-100">
+    <div class="md:max-w-[1000px] md:m-auto">
+      <h2 class="text-8xl">Tools</h2>
+      <div class="flex flex-wrap justify-between">
+        {
+          tools.map((article) => (
+            <article class="flex flex-col items-center w-[50%] sm:w-[30%] md:w-[25%] my-10 hide">
+              <img class="w-[100px]" src={article.imgUrl} alt="" />
+              <h4 class=" text-xl font-bold">{article.heading_4}</h4>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="hide w-full h-auto text-center bg-yellow-400 font-bold">
+    <div class="md:max-w-[1000px] md:m-auto">
+      <h2 class="text-5xl">Graphic editors</h2>
+      <div class="flex flex-wrap justify-between">
+        {
+          graphic.map((article) => (
+            <article class="flex flex-col items-center w-[50%] my-10 hide last:w-full">
+              <img class="w-[100px]" src={article.imgUrl} alt="" />
+              <h4 class=" text-xl font-bold">{article.heading_4}</h4>
+            </article>
+          ))
+        }
+      </div>
+    </div>
   </section>
 </Base>
 
