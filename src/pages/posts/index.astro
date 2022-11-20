@@ -19,33 +19,38 @@ posts = posts.sort((num1: Post, num2: Post): any => {
 ---
 
 <Base title="Blog posts">
-
+  <section class="border-8 border-red-500 w-screen h-auto max-w-[1080px] m-auto">
     <h2 class="mb-8 text-4xl sm:text-6xl text-center mt-4">Favorite books</h2>
- 
 
-  <div class="w-auto sm:w-[80vw] max-w-[800px] m-auto">
-    {
-      posts.map((post) => (
-        <article class="flex justify-center sm:w-[80vw] max-w-[900px] max-h-[400px] sm:max-h-[200px] my-4 bg-slate-100 border-y-4">
-            <aside>
-            
-            <img class="h-[100%] w-[800px] sm:w-[300px]"
-              src={`../../../public/images/${post.frontmatter.urlImg}`}
-              alt=""
-            />
-          </aside>
+    <div class="flex flex-col justify-center border-8 border-green-500 ">
+      {
+        posts.map((post) => (
+          <article class="flex justify-center align-center h-auto w-full sm:max-h-[400px] max-h-[250px] bg-slate-100 my-2">
+            <aside class="h-full self-center">
+              <img
+                class="w-[150px] sm:w-[300px]"
+                src={`/images/${post.frontmatter.urlImg}`}
+                alt=""
+              />
+            </aside>
 
-          <div class="flex flex-col justify-between px-2 sm:px-0 sm:p-4 border-b ">
-          <div class="headData">
-            <a class="text-green-700 hover:underline" href={post.url}>
-              <strong>{post.frontmatter.title}</strong>
-            </a>
-            <p class="font-bold">{formatDate(post.frontmatter.date)}</p></div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto laboriosam voluptatibus aspernatur tempora explicabo quo aperiam eligendi numquam. Animi numquam itaque corporis nobis sint officia veritatis repellendus amet harum beatae!</p>
-          </div>
-        
-        </article>
-      ))
-    }
-  </div>
+            <div class="flex flex-col w-full justify-between px-2 sm:px-0  md:p-4 border-b ">
+              <div>
+                <a class="text-green-700 hover:underline sm:text-lg md:text-2xl lg:text-3xl" href={post.url}>
+                  <strong>{post.frontmatter.title}</strong>
+                </a>
+                <p class="font-bold sm:text-lg md:text-2xl">{formatDate(post.frontmatter.date)}</p>
+              </div>
+           <div class="h-[100%] flex items-center">
+            <p class="text-sm sm:text-lg md:text-2xl lg:text-4xl">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                laboriosam voluptatibus aspernatur tempora explicabo quo aperiam
+                eligendi numquam.
+              </p></div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
 </Base>

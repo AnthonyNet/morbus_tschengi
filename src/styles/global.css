@@ -5,12 +5,14 @@
 
 @layer components {
    
-    .section{
-        @apply w-screen min-h-screen max-w-full grid place-items-center content-around xl:max-w-[2560px]
+    .section {
+        @apply m-auto w-screen min-h-screen  grid place-items-center content-around xl:max-w-[2550px];
     }
 
-    .aboutHeading{
-        @apply text-xl lg:text-3xl 2xl:text-6xl font-bold
+    .aboutHeading {
+        @apply text-xl lg:text-3xl 2xl:text-4xl font-bold;
     }
+
+   
 }
 
