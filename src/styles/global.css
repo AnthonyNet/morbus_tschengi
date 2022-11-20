@@ -6,7 +6,7 @@
 @layer components {
    
     .section{
-        @apply w-screen h-screen max-w-full grid place-items-center content-around
+        @apply w-screen min-h-screen max-w-full grid place-items-center content-around
     }
 }
 
