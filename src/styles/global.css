@@ -8,5 +8,9 @@
     .section{
         @apply w-screen min-h-screen max-w-full grid place-items-center content-around
     }
+
+    .aboutHeading{
+        @apply text-xl lg:text-3xl 2xl:text-6xl font-bold
+    }
 }
 

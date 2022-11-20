@@ -101,13 +101,13 @@ const graphic: { imgUrl: string; heading_4: string }[] = [
   <section class="section hide 2xl:content-center text-center bg-indigo-600 text-blue-300  sm:py-0">
     <div>
       <h2 class="text-3xl md:text-5xl font-bold">Tech Stack</h2>
-    <h2 class="text-5xl md:text-8xl font-bold">Programming</h2>
+    <h2 class="aboutHeading">Programming</h2>
     </div>
-    <div class="md:w-[800px] flex flex-wrap mt-[7%]">
+    <div class="md:w-[800px] xl:w-[1024px] flex flex-wrap mt-[7%]">
       {
         techArticles.map((article) => (
           <article class="articleCover flex flex-col items-center w-[50%]  sm:my-10 hide">
-            <img class="w-[20vw] sm:w-[100px] 3xl:w-[200px]" src={article.imgUrl} alt="" />
+            <img class="w-[20vw] sm:w-[100px] xl:w-[200px]" src={article.imgUrl} alt="" />
             <h4 class=" text-xl font-bold">{article.heading_4}</h4>
             <progress
               class="w-[50%] bg-indigo-50 border-4 border-blue-300 rounded-full"
@@ -126,7 +126,7 @@ const graphic: { imgUrl: string; heading_4: string }[] = [
   <section
     class="section hide grid place-items-center content-around sm:content-center text-blue-600"
   >
-    <h2 class="text-5xl sm:text-8xl">Languages</h2>
+    <h2 class="aboutHeading">Languages</h2>
 
     <div class="h-full logos grid  md:grid-cols-3 sm:gap-6 md:gap-14">
       <div class="logo_Hide my-8">
@@ -168,15 +168,15 @@ const graphic: { imgUrl: string; heading_4: string }[] = [
     </div>
   </section>
 
-  <section class="section hide  text-center bg-purple-600 text-violet-100 grid place-items-center content-around">
-    <div class=" md:max-w-[1000px] md:m-auto">
+  <section class="section hide text-center bg-purple-600 text-violet-100 grid place-items-center content-around">
+    <div class=" w-full max-w-[1440px] md:m-auto">
       <h2 class="text-5xl sm:text-8xl md:pb-8">Tools</h2>
-      <div class="flex flex-wrap justify-between">
+      <div class="flex flex-wrap justify-between md:gap-6">
         {
           tools.map((article) => (
-            <article class="flex  flex-col items-center my-2  w-[50%] sm:w-[30%] md:w-[25%]  hide">
-              <img class="w-[20vw] sm:w-[100px]" src={article.imgUrl} alt="" />
-              <h4 class=" text-xl font-bold">{article.heading_4}</h4>
+            <article class="flex flex-col items-center my-2  w-[50%] sm:w-[30%] md:w-[20%]  hide">
+              <img class="w-[20vw] sm:w-[100px] 2xl:w-[200px]" src={article.imgUrl} alt="" />
+              <h4 class="aboutHeading">{article.heading_4}</h4>
             </article>
           ))
         }
@@ -186,13 +186,13 @@ const graphic: { imgUrl: string; heading_4: string }[] = [
 
   <section class="section hide text-center bg-yellow-400 font-bold grid place-items-center content-center">
     <div class="md:max-w-[1000px] md:m-auto grid place-items-center content-center">
-      <h2 class="text-5xl">Graphic editors</h2>
+      <h2 class="text-5xl xl:text-8xl">Graphic editors</h2>
       <div class="flex flex-wrap justify-between">
         {
           graphic.map((article) => (
             <article class="flex flex-col items-center w-[50%] my-10 hide last:w-full">
-              <img class="w-[100px]" src={article.imgUrl} alt="" />
-              <h4 class=" text-xl font-bold">{article.heading_4}</h4>
+              <img class="w-20 xl:w-40" src={article.imgUrl} alt="" />
+              <h4 class="aboutHeading">{article.heading_4}</h4>
             </article>
           ))
         }
