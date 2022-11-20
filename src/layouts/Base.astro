@@ -24,60 +24,56 @@ import Navbar from '../components/Navbar.astro';
 </html>
 
 <style is:global>
-	 @import url("https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Noto+Sans:ital,wght@0,500;1,600&display=swap");
-	:root {
-		--max-width:  1920px;
-		--height: calc(100vh - 60px);
-		--max-height: 1080px;
-		--navbar-height: 60px;
-		scroll-padding-top: calc(var(--navbar-height) + 10px);
-		scroll-behavior: smooth;
+    @import url("https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Noto+Sans:ital,wght@0,500;1,600&display=swap");
+    :root {
+    --max-width:  1920px;
+    --height: calc(100vh - 60px);
+    --max-height: 1080px;
+    --navbar-height: 60px;
+    scroll-padding-top: calc(var(--navbar-height) + 10px);
+    scroll-behavior: smooth;
 
-		--color-red: red;
-		--color-black: black;
-		--color-white: #ffffff;
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: var(--color-white);
-		overflow-x: hidden;
-	}
-	body, main{
-        height: 100%;
-        width: 100%;
-		margin: 0 auto;
-		max-width: var(--max-width);
-        overflow-x: hidden;
-	}
+    --color-red: red;
+    --color-black: black;
+    --color-white: #ffffff;
+}
+html {
+    font-family: system-ui, sans-serif;
+    background-color: var(--color-white);
+    overflow-x: hidden;
+}
+body{
+    margin: 0 auto;
+    max-width: var(--max-width);
+    width: 100vw;
+    overflow-x: hidden;
+}
 
 
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+code {
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+        Bitstream Vera Sans Mono, Courier New, monospace;
+}
 
-    .strong {
-    font-family: Creepster;
-    color: var(--color-red);
-  }
+.strong {
+font-family: Creepster;
+color: var(--color-red);
+}
 
-	/* OBSERVER STYLES */
-  
-	.hide{
+/* OBSERVER STYLES */
+
+.hide{
         opacity: 0;
         filter: blur(5px);
         transform: translateX(100%);
         transition: all 1s;
     }
-
     .logo_Hide{
         opacity: 0;
         filter: blur(5px);
         transform: translateX(-100%);
         transition: all 1s;
     }
-
-
 	.hide:nth-of-type(even) {
 		transform: translateX(-100%);
        
@@ -86,31 +82,30 @@ import Navbar from '../components/Navbar.astro';
         opacity: 1;
         filter: blur(0);
         transform: translateX(0)!important;
-
         }
-   
+
 /* About section logos animation*/
-        
-      
-        .logo_Hide:nth-child(1){
-            transition-delay: 600ms;
+    
+  
+    .logo_Hide:nth-child(1){
+        transition-delay: 600ms;
 
-        }
-        .logo_Hide:nth-child(2){
-            transition-delay: 800ms;
+    }
+    .logo_Hide:nth-child(2){
+        transition-delay: 800ms;
 
-        }
-         .logo_Hide:nth-child(3){
-            transition-delay: 1000ms;
-        }
-         .logo_Hide:nth-child(4){
-            transition-delay: 1200ms;
-        }
-         .logo_Hide:nth-child(5){
-            transition-delay: 1200ms;
-        }
-      
+    }
+     .logo_Hide:nth-child(3){
+        transition-delay: 1000ms;
+    }
+     .logo_Hide:nth-child(4){
+        transition-delay: 1200ms;
+    }
+     .logo_Hide:nth-child(5){
+        transition-delay: 1200ms;
+    }
 </style>
+
 
 <script>
 	   const observer = new IntersectionObserver((entries) => {

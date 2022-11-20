@@ -97,16 +97,18 @@ const graphic: { imgUrl: string; heading_4: string }[] = [
 ---
 
 <Base title="About Me">
-  <section class="about lg:max-h-[1080px] grid place-items-center content-around w-full text-center bg-indigo-600 text-blue-300 py-4 sm:py-0">
+<!-- <section class="section"></section> -->
+  
+  <section class="section  text-center bg-indigo-600 text-blue-300 py-4 sm:py-0">
     <div>
       <h2 class="text-3xl font-bold">Tech Stack</h2>
     <h2 class="text-5xl font-bold">Programming</h2>
     </div>
-    <div class="md:w-[800px] flex flex-wrap justify-around items-center">
+    <div class="md:w-[800px] flex flex-wrap">
       {
         techArticles.map((article) => (
-          <article class="flex flex-col items-center w-[50%] sm:my-10 hide">
-            <img class="w-[20vw] sm:w-[100px]" src={article.imgUrl} alt="" />
+          <article class="articleCover flex flex-col items-center w-[50%]  sm:my-10 hide">
+            <img class="w-[20vw] sm:w-[100px] 2xl:w-[200px]" src={article.imgUrl} alt="" />
             <h4 class=" text-xl font-bold">{article.heading_4}</h4>
             <progress
               class="w-[50%] bg-indigo-50 border-4 border-blue-300 rounded-full"
@@ -123,7 +125,7 @@ const graphic: { imgUrl: string; heading_4: string }[] = [
   </section>
 
   <section
-    class="hide w-[100vw] min-h-[100vh] md:max-w-[1000px] md:m-auto md:min-h-[800px] md:h-auto grid place-items-center content-around sm:content-center text-blue-600"
+    class="section hide grid place-items-center content-around sm:content-center text-blue-600"
   >
     <h2 class="text-5xl sm:text-8xl">Languages</h2>
 
@@ -167,7 +169,7 @@ const graphic: { imgUrl: string; heading_4: string }[] = [
     </div>
   </section>
 
-  <section class="hide w-full min-h-[100vh] md:h-auto text-center bg-purple-600 text-violet-100 grid place-items-center content-around">
+  <section class="hide min-h-[100vh] md:h-auto text-center bg-purple-600 text-violet-100 grid place-items-center content-around">
     <div class=" md:max-w-[1000px] md:m-auto">
       <h2 class="text-5xl sm:text-8xl md:pb-8">Tools</h2>
       <div class="flex flex-wrap justify-between">
@@ -198,13 +200,12 @@ const graphic: { imgUrl: string; heading_4: string }[] = [
       </div>
     </div>
   </section>
+ 
 </Base>
 
 <style>
-  .about{
-    min-height: calc(100vh - 60px);
-  }
-  .about div article:nth-child(3) {
+
+  .articleCover:nth-child(3) {
     width: 100%;
   }
 </style>
