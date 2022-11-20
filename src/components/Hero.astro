@@ -14,15 +14,15 @@ const textHero: Hero[] = [
 ---
 
 <section
-  class="section heroSection heroDefault flex flex-col h-auto  justify-center items-center lg:flex-row lg:py-0 lg:justify-around lg:pl-4"
+  class="section heroSection heroDefault flex flex-col h-auto  justify-center items-center lg:flex-row lg:py-0 lg:justify-around"
 >
   {
     textHero.map((item) => (
-      <div class="flex w-full flex-col justify-center items-center text-xl sm:text-3xl heroText">
+      <div class="flex w-full md:w-auto flex-col md:flex-row justify-center items-center text-xl sm:text-3xl heroText">
         <article class="w-full flex flex-col justify-center items-center">
           <h2 class="pb-2">{item.heading2}</h2>
           <h1 class="pb-2 blickAnimation text-5xl  sm:text-7xl">
-            {item.heading1}{" "}
+            {item.heading1}
           </h1>
           <h2 class="indent-4 p-2">
             {item.heading2_b} <span class="blickAnimation">{item.blick}</span>
@@ -38,7 +38,7 @@ const textHero: Hero[] = [
             </h2>
           </div>
         </article>
-        <aside class="sm:verticalHero text-6xl sm:text-8xl text-white text-center md:text-left">
+        <aside class="hidden xl:flex verticalHero text-6xl sm:text-8xl text-white text-center md:text-left">
           <h4>PLAGUE</h4>
         </aside>
       </div>
@@ -79,8 +79,10 @@ const textHero: Hero[] = [
 
   /*Plague hero TEXT */
   .verticalHero {
-    writing-mode: vertical-lr;
+    writing-mode: vertical-rl;
   }
+
+  .verticalHero,
   .heroSection {
     transition: 2s ease-in-out;
     font-family: "Creepster", cursive;
