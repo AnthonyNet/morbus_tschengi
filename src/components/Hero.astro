@@ -14,21 +14,21 @@ const textHero: Hero[] = [
 ---
 
 <section
-  class="heroSection heroDefault flex flex-col h-auto max-w-[1920px] w-[100vw] justify-center items-center lg:flex-row lg:py-0 lg:justify-around lg:pl-4"
+  class="section heroSection heroDefault flex flex-col h-auto  justify-center items-center lg:flex-row lg:py-0 lg:justify-around lg:pl-4"
 >
   {
     textHero.map((item) => (
-      <div class="flex text-3xl heroText lg:w-full">
-        <article>
+      <div class="flex w-full flex-col justify-center items-center text-xl sm:text-3xl heroText">
+        <article class="w-full flex flex-col justify-center items-center">
           <h2 class="pb-2">{item.heading2}</h2>
-          <h1 class="pb-2 blickAnimation text-6xl  sm:text-7xl">
+          <h1 class="pb-2 blickAnimation text-5xl  sm:text-7xl">
             {item.heading1}{" "}
           </h1>
           <h2 class="indent-4 p-2">
             {item.heading2_b} <span class="blickAnimation">{item.blick}</span>
           </h2>
           <h4 class="indent-4">{item.heading4}</h4>
-          <div class="h-[100px] animSpan">
+          <div class="h-10 sm:h-[100px] animSpan">
             <h2 class="indent-4">
               <a href="#sections" class="hover:text-red-800">
                 <span>&#9759;</span>
@@ -38,14 +38,14 @@ const textHero: Hero[] = [
             </h2>
           </div>
         </article>
-        <aside class="verticalHero text-4xl sm:text-8xl text-white text-center md:text-left">
+        <aside class="sm:verticalHero text-6xl sm:text-8xl text-white text-center md:text-left">
           <h4>PLAGUE</h4>
         </aside>
       </div>
     ))
   }
 
-  <div class="heroImage w-[70vw] sm:w-[350px] lg:w-[500px]">
+  <div class="heroImage w-[50vw] sm:w-[350px] lg:w-[500px]">
     <img
       src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fzombie-clipart-zombie-word-18.png&f=1&nofb=1&ipt=b11b998aa0eae5223d940e45af61a176394248ef1371ed910ea0ec76bc5b374a&ipo=images"
       alt=""
@@ -82,10 +82,8 @@ const textHero: Hero[] = [
     writing-mode: vertical-lr;
   }
   .heroSection {
-    max-height: var(--max-height);
     transition: 2s ease-in-out;
     font-family: "Creepster", cursive;
-    height: calc(100vh - 60px);
   }
 
   .heroDefault .heroImage img {
