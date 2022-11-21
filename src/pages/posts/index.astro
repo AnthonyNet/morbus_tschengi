@@ -19,10 +19,10 @@ posts = posts.sort((num1: Post, num2: Post): any => {
 ---
 
 <Base title="Blog posts">
-  <section class="border-8 border-red-500 w-screen h-auto max-w-[1080px] m-auto">
+  <section class="w-screen h-auto max-w-[1080px] m-auto">
     <h2 class="mb-8 text-4xl sm:text-6xl text-center mt-4">Favorite books</h2>
 
-    <div class="flex flex-col justify-center border-8 border-green-500 ">
+    <div class="flex flex-col justify-center">
       {
         posts.map((post) => (
           <article class="flex justify-center align-center h-auto w-full sm:max-h-[400px] max-h-[250px] bg-slate-100 my-2">

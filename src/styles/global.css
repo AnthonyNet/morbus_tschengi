@@ -6,11 +6,11 @@
 @layer components {
    
     .section {
-        @apply m-auto w-screen min-h-screen  grid place-items-center content-around xl:max-w-[2550px];
+        @apply m-auto w-screen min-h-screen  grid place-items-center content-around xl:max-w-[2560px];
     }
 
     .aboutHeading {
-        @apply text-xl lg:text-3xl 2xl:text-4xl font-bold;
+        @apply text-xl lg:text-3xl 2xl:text-6xl font-bold;
     }
 
    
