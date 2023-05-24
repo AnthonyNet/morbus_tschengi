@@ -6,7 +6,7 @@
 @layer components {
 
     .section {
-        @apply m-auto min-h-screen  grid place-items-center content-around w-full max-h-[1080px];
+        @apply m-auto h-screen grid place-items-center content-around w-full max-h-[1080px];
     }
 
     .aboutHeading {
