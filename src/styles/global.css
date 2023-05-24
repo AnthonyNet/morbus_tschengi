@@ -4,15 +4,14 @@
 /* Global CSS in src/layouts/Base.astro */
 
 @layer components {
-   
+
     .section {
-        @apply m-auto w-screen min-h-screen  grid place-items-center content-around xl:max-w-[2560px];
+        @apply m-auto min-h-screen  grid place-items-center content-around w-full max-h-[1080px];
     }
 
     .aboutHeading {
         @apply text-xl lg:text-3xl 2xl:text-6xl font-bold;
     }
 
-   
-}
 
+}
