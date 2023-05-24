@@ -106,8 +106,8 @@ const graphic: { imgUrl: string; heading_4: string }[] = [
     <div class="md:w-[800px] xl:w-[1024px] flex flex-wrap">
       {
         techArticles.map((article) => (
-          <article class="articleCover flex flex-col items-center w-[50%]  hide">
-            <img class="w-[20vw] sm:w-[100px] xl:w-[150px] max-w-[100px]" src={article.imgUrl} alt="" />
+          <article class="articleCover flex flex-col items-center w-[50%] border-4  hide">
+            <img class="w-[20vw] sm:w-[60px] xl:w-[150px] max-w-[100px]" src={article.imgUrl} alt="" />
             <h4 class=" text-xl font-bold">{article.heading_4}</h4>
             <progress
               class="w-[50%] bg-indigo-50 border-4 border-blue-300 rounded-full"
